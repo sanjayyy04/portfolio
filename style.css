@@ -1,0 +1,840 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    /* background: linear-gradient(45deg, #333, #444); */
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-color: black;
+    scroll-behavior: smooth;
+}
+
+header {
+    background-color: #ffffff;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15%;
+    align-items: center;
+    justify-content: space-around;
+    /* border-radius: 12px; */
+    max-width: 100;
+    width: 100%;
+    /* margin: 10px auto; */
+    position: fixed;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(7px);
+    box-shadow: 0px 1px 1px #848484e8;
+
+}
+
+.name-para p>span {
+    font-size: 22px;
+    margin-left: 7px;
+    color: #a177ef;
+}
+
+header>.logo {
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0);
+    background: linear-gradient(45deg, #ffffff, #5f18e3);
+    background-clip: text;
+    /* padding: 5px; */
+    /* border-radius: 10px; */
+    font-weight: bold;
+    font-family: "Edu NSW ACT Cursive", cursive;
+    font-optical-sizing: auto;
+    /* font-weight: <weight>; */
+    font-style: normal;
+
+}
+
+nav {
+    display: flex;
+    background: #010001;
+    align-items: center;
+    padding-right: 34px;
+    border-radius: 7px;
+}
+
+nav>ul {
+    display: flex;
+    list-style: none;
+    gap: 60px;
+    font-size: 16px;
+    flex-wrap: wrap;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    /* background: linear-gradient( 95deg,  #a9a9a9, #0044ff);
+    background-clip: text; */
+    transition: 0.3s;
+
+    &:hover {
+        color: red;
+        border-bottom: 2px solid red;
+    }
+}
+
+.semi-nav {
+    display: none;
+}
+
+.active {
+    color: red;
+    border-bottom: 2px solid red;
+}
+
+#menu-btn {
+    display: none;
+    width: 28px;
+    height: 35px;
+    background: transparent;
+    border-radius: 10%;
+    /* display: none; */
+    cursor: pointer;
+    /* filter: invert(1); */
+    transition: all 1s ease;
+    padding: 5px;
+
+    &:hover {
+        background-color: red;
+        scale: 1.12;
+    }
+}
+
+#close-btn {
+    display: none;
+    width: 28px;
+    height: 35px;
+    cursor: pointer;
+    transition: none;
+    /* position: absolute; */
+    top: 4px;
+    /* filter: invert(1); */
+    right: 158px;
+    z-index: 10;
+    padding: 1px 5px;
+    border-radius: 10%;
+    background-color: red;
+    scale: 1.12;
+}
+
+.name-semi {
+    width: 33%;
+}
+
+.name {
+    position: relative;
+    z-index: 10;
+    height: 100vh;
+    /* padding: 10% 0%; */
+    /* background: deeppink; */
+    /* margin: 8% 16%; */
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    /* gap: 20px; */
+    justify-content: space-around;
+
+}
+
+.name .hello {
+    font-family: "Edu NSW ACT Cursive", cursive;
+    font-optical-sizing: auto;
+    /* font-weight: <weight>; */
+    font-style: normal;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0);
+    background: linear-gradient(45deg, #ffffff, #5f18e3);
+    background-clip: text;
+}
+
+.name-para {
+    margin: 26px 0px;
+    font-size: 12px;
+    /* border-right: 2px solid red; */
+    height: 32px;
+    /* background-color: pink; */
+    /* width: 112px; */
+    /* overflow: hidden; */
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /* animation: name-para 4s alternate-reverse infinite linear; */
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+
+    font-style: normal;
+    flex-wrap: wrap;
+    display: flex;
+
+}
+
+.name-para>p {
+    margin: 0;
+}
+
+/* 
+@keyframes name-para {
+    0% {
+        width: 112px;
+    }
+
+    100% {
+        width: 340px;
+        animation-delay: 1s;
+    }
+
+} */
+
+.name p {
+    font-size: 1.4rem;
+    /* display: flex; */
+
+}
+
+.name span {
+    font-size: 2.4rem;
+    font-weight: 500;
+}
+
+.name img {
+    width: 300px;
+    border-radius: 50%;
+}
+
+/* Social Icons */
+.social {
+    margin-top: 2rem;
+    display: flex;
+    gap: 15px;
+}
+
+.social img {
+    background: #ffffff;
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+    border: 1px solid white;
+}
+
+.social img:hover {
+    transform: scale(1.2);
+    filter: invert(1);
+}
+
+.blur {
+    position: absolute;
+    top: 179px;
+    filter: blur(98px);
+    left: 217px;
+    z-index: 1;
+    width: 71%;
+    height: 59vh;
+    background: linear-gradient(45deg, #561a84, #000000, #561a84);
+}
+
+.blur2 {
+    position: absolute;
+    top: 778px;
+    transform: rotate(177deg);
+    filter: blur(98px);
+    left: 207px;
+    z-index: -2;
+    width: 77%;
+    height: 32vh;
+    background: linear-gradient(145deg, #561a84, #000000, #561a84);
+}
+
+.about {
+    position: relative;
+    display: flex;
+    background-color: #0000000f;
+    backdrop-filter: blur(100px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all .5s ease-in-out;
+    /* width: 88%; */
+    max-width: 74%;
+    margin: auto;
+    border-radius: 22px;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0px 0px 60px 0px rgba(242, 241, 241, 0.3);
+    /* background-color: #ffffff; */
+    /* animation: fade-up 1s;
+    animation-timeline: view(70%, 10%); */
+    /* background-color: #000; */
+}
+
+.about::after{
+    content: "";
+    z-index: -1;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(-45deg, #fb00ff2a 0%, #00dade0f 100%);
+    transform: translate3d(0, 0, 0) scale(0.95);
+    filter: blur(20px);
+}
+
+.about p {
+    font-size: 21px;
+    padding: 0px 60px;
+    font-weight: 300;
+}
+
+.about>h1 {
+    font-family: "Edu NSW ACT Cursive", cursive;
+    font-optical-sizing: auto;
+    /* font-weight: <weight>; */
+    font-style: normal;
+}
+
+.skill-parent {
+    margin-top: 175px;
+    transition: all .5s ease-in-out;
+    font-family: "Edu NSW ACT Cursive", cursive;
+    font-optical-sizing: auto;
+    /* font-weight: <weight>; */
+    font-style: normal;
+}
+
+.skill-h1 {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 85px;
+    margin-top: 3%;
+    margin-bottom: 8%;
+}
+
+.skills:nth-child(2)> :nth-child(1) {
+    filter: drop-shadow(0px 0px 20px #fc490b);
+}
+
+.skills:nth-child(2)> :nth-child(2) {
+    filter: drop-shadow(0px 0px 20px #2196f3);
+}
+
+.skills:nth-child(2)> :nth-child(3) {
+
+    filter: drop-shadow(0px 0px 20px #ffdf00);
+}
+
+.skills:nth-child(2)> :nth-child(4) {
+
+    filter: drop-shadow(0px 0px 20px #777bb3);
+
+}
+
+.skills:nth-child(2)> :nth-child(5) {
+
+    filter: drop-shadow(0px 0px 20px #f2f2f2);
+}
+
+.skills:nth-child(2)> :nth-child(6) {
+
+    filter: drop-shadow(0px 0px 20px #d3360e);
+}
+
+.skills:nth-child(2)> :nth-child(7) {
+
+    filter: drop-shadow(0px 0px 20px #43e74b);
+}
+
+.skills-img {
+    border-radius: 51px;
+    width: 81px;
+    height: 81px;
+    margin: 10px 10px;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+
+
+    &:hover {
+        transform: scale(1.2);
+        border-radius: 0px;
+    }
+}
+
+.marquee-container {
+    margin-top: 160px;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+
+    border-bottom: 4px solid black;
+    padding: 10px;
+    transform: rotate(-2deg);
+    background: #eaff05b6;
+
+}
+
+.marquee-text {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 30s linear infinite;
+    font-size: 24px;
+    color: #333;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.projects {
+    margin-top: 10%;
+    /* padding: 10%; */
+    /* background-color: pink; */
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+button {
+    padding: 10px;
+    border-radius: 7px;
+    border: none;
+    transition: all .5s ease;
+    margin-top: 14px;
+
+    &:hover {
+        background-color: #f03232;
+        color: white;
+    }
+}
+
+.internship,
+.braincraft,
+.Experience_container {
+    
+    margin: auto;
+    /* margin-top: 140px; */
+    border-radius: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+    color: white;
+    padding: 20px;
+    background: #292929;
+    width: 80%;
+    transition: all 1s ease;
+    position: relative;
+
+}
+
+#Internship_more,
+#BrainCraft_more,
+#Experience_more {
+    box-shadow: -1px 0px 0px 6px rgb(0 0 0);
+    position: absolute;
+    padding: 3px 11px;
+    border-radius: 50%;
+    display: flex;
+    right: 5px;
+    bottom: 5px;
+    background: #ffffff;
+    color: #000000;
+    font-size: 29px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .3s linear;
+
+    &:hover {
+        background: red;
+        color: white;
+    }
+}
+
+.internship img,
+.braincraft img {
+    width: 500px;
+    border-radius: calc(40px - 20px);
+}
+
+.braincraft :nth-child(2) {
+    flex-wrap: wrap;
+}
+
+.brain-div2 {
+    max-width: 37%;
+}
+
+.contect {
+    margin-top: 68px;
+    background: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+
+
+.contact-semi {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-semi>h1 {
+    font-family: "Edu NSW ACT Cursive", cursive;
+    font-optical-sizing: auto;
+    /* font-weight: <weight>; */
+    font-style: normal;
+}
+
+.contact-semi p {
+    font-family: "Edu NSW ACT Cursive", cursive;
+    font-optical-sizing: auto;
+    /* font-weight: <weight>; */
+    font-style: normal;
+}
+
+.detail-container,
+.Experience_container {
+    display: none;
+    margin-top: -45px;
+    max-width: 67%;
+    /* background: #4a4a4a; */
+    backdrop-filter: blur(30px);
+    padding: 40px;
+    border-radius: 25px;
+    color: white;
+    line-height: 1.8;
+    transition: all 1s ease;
+}
+
+.detail-container ul {
+    margin-left: 20px;
+}
+
+.detail-container h1,
+.Experience_container h1 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    /* text-align: center; */
+
+}
+
+
+.project-container {
+    display: none;
+    max-width: 887px;
+    margin: auto;
+}
+
+.brain-project {
+    background: #ffffff0f;
+    backdrop-filter: blur(30px);
+    border-radius: 25px;
+    padding: 30px;
+    transition: all 0.5s ease;
+    margin: 16px;
+}
+
+
+.project:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.1);
+}
+
+.project h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.project p {
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.project ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.project ul li {
+    margin-bottom: 6px;
+}
+
+h1.page-title {
+    text-align: center;
+    font-size: 2.4rem;
+    margin-bottom: 50px;
+}
+
+.contact-info {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.email-link,
+.phone-link {
+    padding: .5rem 0px;
+    display: inline-block;
+    color: #000000;
+    /* blue */
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease, text-decoration-color 0.3s ease;
+}
+
+
+.email-link:hover,
+.email-link:focus,
+.phone-link:hover,
+.phone-link:focus {
+    color: #ff0000;
+    /* text-decoration: underline; */
+    text-decoration-color: #ff0303;
+}
+
+.email-link:active,
+.phone-link:active {
+    color: #ff0707;
+}
+
+
+@media only screen and (max-width: 768px) {
+
+    nav {
+        display: block;
+        background: none;
+        align-items: center;
+        padding-right: 0;
+        border-radius: 0;
+    }
+
+    .semi-nav {
+        display: block;
+        background: #8d8d8d;
+        padding: 12px 3.2rem 10px 1rem;
+        position: absolute;
+        right: 1%;
+        top: 102%;
+        color: white;
+        border-radius: 5px;
+    }
+
+    .semi-nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .semi-nav ul li {
+        list-style: none;
+        color: white;
+
+    }
+
+
+#menu-btn {
+    display: block;
+    height: 25%;
+}
+
+.name-semi {
+    width: 50%;
+}
+
+.name {
+    justify-content: space-around;
+    gap: 6%;
+}
+
+/* nav>ul {
+
+        transition: all 1s ease;
+        background: #ffffff;
+        color: black;
+        position: fixed;
+        top: 8vh;
+        right: 1%;
+        width: 19%;
+        display: none;
+        padding: 19px 21px;
+        justify-content: center;
+        border-radius: 5px;
+        padding-bottom: 4vh;
+        z-index: 10;
+        gap: 30px;
+    } */
+
+nav>ul {
+    background: #ffffff;
+    color: black;
+    position: fixed;
+    top: 8vh;
+    right: 1%;
+    width: 15.3%;
+    /* wider on mobile */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    padding: 19px 21px 4vh;
+    z-index: 10;
+    gap: 30px;
+
+    /* animation prep */
+    opacity: 0;
+    /* transform: translateX(100%);
+        pointer-events: none; */
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* when JS adds .open: fade + slide in */
+nav>ul.open {
+    opacity: 1;
+    /* transform: translateX(0);
+        pointer-events: auto; */
+}
+
+nav>ul a {
+    text-decoration: none;
+    color: #000000;
+}
+
+header {
+    justify-content: space-around;
+    gap: 62%;
+    width: 100%;
+}
+
+.social {
+    justify-content: start;
+}
+
+.blur,
+.blur2 {
+    left: 48px;
+}
+
+.name {
+    /* margin: 15vh 0; */
+}
+
+.pic img {
+    width: 174px;
+}
+
+.brain-div2 {
+    max-width: 57%;
+}
+
+.internship,
+.braincraft {
+    width: 87%;
+}
+}
+
+
+@media (max-width: 450px) {
+    body {
+        /* color: pink;
+        background: #777bb3;  */
+    }
+
+    header {
+        gap: 35%;
+    }
+
+    nav>ul {
+        top: 80%;
+        right: 1%;
+        width: 28%;
+    }
+
+    .blur,
+    .blur2 {
+        left: 40px;
+    }
+
+    .internship img {
+        width: 346px;
+    }
+
+    .braincraft img {
+        width: 352px;
+    }
+
+    .contact-semi p {
+        max-width: 345px;
+    }
+
+    .about {
+        max-width: 92%;
+        text-align: start;
+    }
+
+    .about p {
+        font-size: 18px;
+        padding: 0px 20px;
+        font-weight: 200;
+        /* text-align: justify; */
+    }
+
+    .name {
+        padding-top: 15vh;
+        height: max-content;
+        /* margin-top: 14%; */
+        padding: 53% 0;
+        gap: 8vh;
+    }
+
+    .pic img {
+        padding: 0px 81px;
+    }
+
+    .name-semi {
+
+        width: 82%;
+    }
+
+    .detail-container {
+        max-width: 100%;
+        padding: 0;
+        margin-bottom: 6vh;
+    }
+
+    .brain-project {
+        padding: 12px;
+        margin: 3px 3px 6vh;
+        width: 92%;
+    }
+
+    .brain-div2 {
+        max-width: 100%;
+    }
+
+}
