@@ -2,7 +2,6 @@ html,
 body {
     margin: 0;
     padding: 0;
-    /* background: linear-gradient(45deg, #333, #444); */
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
@@ -10,23 +9,72 @@ body {
     scroll-behavior: smooth;
 }
 
+*::selection {
+    color: rgb(255, 0, 0);
+}
+
+.lazy.loaded {
+    opacity: 1;
+}
+
+.lazy {
+    width: 7%;
+    height: 2%;
+    border-radius: 50%;
+}
+
 header {
-    background-color: #ffffff;
+    background-color: #ffffff00;
     display: flex;
     flex-wrap: wrap;
-    gap: 15%;
+    gap: 11%;
     align-items: center;
     justify-content: space-around;
-    /* border-radius: 12px; */
     max-width: 100;
     width: 100%;
-    /* margin: 10px auto; */
     position: fixed;
     top: 0;
     z-index: 50;
     backdrop-filter: blur(7px);
-    box-shadow: 0px 1px 1px #848484e8;
+    box-shadow: 0px 1px 1px #84848441;
+    animation: fadeup 1s;
+    animation-timeline: view(0%, 10%);
+}
 
+@keyframes fadeup {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeleft {
+    0% {
+        opacity: 0;
+        transform: translatex(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translatex(0);
+    }
+}
+
+@keyframes faderight {
+    0% {
+        opacity: 0;
+        transform: translatex(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translatex(0);
+    }
 }
 
 .name-para p>span {
@@ -40,14 +88,10 @@ header>.logo {
     color: rgba(255, 255, 255, 0);
     background: linear-gradient(45deg, #ffffff, #5f18e3);
     background-clip: text;
-    /* padding: 5px; */
-    /* border-radius: 10px; */
     font-weight: bold;
     font-family: "Edu NSW ACT Cursive", cursive;
     font-optical-sizing: auto;
-    /* font-weight: <weight>; */
     font-style: normal;
-
 }
 
 nav {
@@ -55,7 +99,7 @@ nav {
     background: #010001;
     align-items: center;
     padding-right: 34px;
-    border-radius: 7px;
+    border-radius: 43px;
 }
 
 nav>ul {
@@ -69,8 +113,6 @@ nav>ul {
 nav ul a {
     text-decoration: none;
     color: rgb(255, 255, 255);
-    /* background: linear-gradient( 95deg,  #a9a9a9, #0044ff);
-    background-clip: text; */
     transition: 0.3s;
 
     &:hover {
@@ -85,7 +127,6 @@ nav ul a {
 
 .active {
     color: red;
-    border-bottom: 2px solid red;
 }
 
 #menu-btn {
@@ -94,9 +135,8 @@ nav ul a {
     height: 35px;
     background: transparent;
     border-radius: 10%;
-    /* display: none; */
     cursor: pointer;
-    /* filter: invert(1); */
+    filter: invert(1);
     transition: all 1s ease;
     padding: 5px;
 
@@ -112,9 +152,7 @@ nav ul a {
     height: 35px;
     cursor: pointer;
     transition: none;
-    /* position: absolute; */
     top: 4px;
-    /* filter: invert(1); */
     right: 158px;
     z-index: 10;
     padding: 1px 5px;
@@ -125,20 +163,18 @@ nav ul a {
 
 .name-semi {
     width: 33%;
+    animation: fadeleft 1s;
+    animation-timeline: view(0%, 10%);
 }
 
 .name {
     position: relative;
     z-index: 10;
     height: 100vh;
-    /* padding: 10% 0%; */
-    /* background: deeppink; */
-    /* margin: 8% 16%; */
     color: white;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    /* gap: 20px; */
     justify-content: space-around;
 
 }
@@ -146,7 +182,6 @@ nav ul a {
 .name .hello {
     font-family: "Edu NSW ACT Cursive", cursive;
     font-optical-sizing: auto;
-    /* font-weight: <weight>; */
     font-style: normal;
     font-size: 18px;
     color: rgba(255, 255, 255, 0);
@@ -157,45 +192,22 @@ nav ul a {
 .name-para {
     margin: 26px 0px;
     font-size: 12px;
-    /* border-right: 2px solid red; */
     height: 32px;
-    /* background-color: pink; */
-    /* width: 112px; */
-    /* overflow: hidden; */
-
     text-overflow: ellipsis;
     white-space: nowrap;
-    /* animation: name-para 4s alternate-reverse infinite linear; */
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
-
     font-style: normal;
     flex-wrap: wrap;
     display: flex;
-
 }
 
 .name-para>p {
     margin: 0;
 }
 
-/* 
-@keyframes name-para {
-    0% {
-        width: 112px;
-    }
-
-    100% {
-        width: 340px;
-        animation-delay: 1s;
-    }
-
-} */
-
 .name p {
     font-size: 1.4rem;
-    /* display: flex; */
-
 }
 
 .name span {
@@ -206,6 +218,8 @@ nav ul a {
 .name img {
     width: 300px;
     border-radius: 50%;
+    animation: faderight 1s;
+    animation-timeline: view(30%, 10%);
 }
 
 /* Social Icons */
@@ -262,20 +276,27 @@ nav ul a {
     justify-content: center;
     text-align: center;
     transition: all .5s ease-in-out;
-    /* width: 88%; */
     max-width: 74%;
     margin: auto;
     border-radius: 22px;
     color: white;
     transform: scale(1.05);
     box-shadow: 0px 0px 60px 0px rgba(242, 241, 241, 0.3);
-    /* background-color: #ffffff; */
-    /* animation: fade-up 1s;
-    animation-timeline: view(70%, 10%); */
-    /* background-color: #000; */
+    animation: fadeup;
+    animation-timeline: view();
 }
 
-.about::after{
+@keyframes fadeup {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.about::after {
     content: "";
     z-index: -1;
     position: absolute;
@@ -294,7 +315,6 @@ nav ul a {
 .about>h1 {
     font-family: "Edu NSW ACT Cursive", cursive;
     font-optical-sizing: auto;
-    /* font-weight: <weight>; */
     font-style: normal;
 }
 
@@ -303,7 +323,6 @@ nav ul a {
     transition: all .5s ease-in-out;
     font-family: "Edu NSW ACT Cursive", cursive;
     font-optical-sizing: auto;
-    /* font-weight: <weight>; */
     font-style: normal;
 }
 
@@ -321,6 +340,20 @@ nav ul a {
     gap: 85px;
     margin-top: 3%;
     margin-bottom: 8%;
+    animation: skill-anim;
+    animation-timeline: view(50% 0%);
+}
+
+@keyframes skill-anim {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .skills:nth-child(2)> :nth-child(1) {
@@ -357,20 +390,14 @@ nav ul a {
     filter: drop-shadow(0px 0px 20px #43e74b);
 }
 
-.skills-img {
+/* .skills-img {
     border-radius: 51px;
     width: 81px;
     height: 81px;
     margin: 10px 10px;
     transition: all .3s ease-in-out;
     cursor: pointer;
-
-
-    &:hover {
-        transform: scale(1.2);
-        border-radius: 0px;
-    }
-}
+} */
 
 .marquee-container {
     margin-top: 160px;
@@ -378,12 +405,10 @@ nav ul a {
     overflow: hidden;
     white-space: nowrap;
     box-sizing: border-box;
-
     border-bottom: 4px solid black;
     padding: 10px;
     transform: rotate(-2deg);
     background: #eaff05b6;
-
 }
 
 .marquee-text {
@@ -406,8 +431,6 @@ nav ul a {
 
 .projects {
     margin-top: 10%;
-    /* padding: 10%; */
-    /* background-color: pink; */
     display: flex;
     flex-direction: column;
     gap: 50px;
@@ -429,9 +452,7 @@ button {
 .internship,
 .braincraft,
 .Experience_container {
-    
     margin: auto;
-    /* margin-top: 140px; */
     border-radius: 30px;
     display: flex;
     flex-wrap: wrap;
@@ -444,7 +465,8 @@ button {
     width: 80%;
     transition: all 1s ease;
     position: relative;
-
+    animation: fadeup;
+    animation-timeline: view(20% 0%);
 }
 
 #Internship_more,
@@ -492,9 +514,7 @@ button {
     align-items: center;
     justify-content: center;
     text-align: center;
-
 }
-
 
 .contact-semi {
     display: flex;
@@ -507,14 +527,12 @@ button {
 .contact-semi>h1 {
     font-family: "Edu NSW ACT Cursive", cursive;
     font-optical-sizing: auto;
-    /* font-weight: <weight>; */
     font-style: normal;
 }
 
 .contact-semi p {
     font-family: "Edu NSW ACT Cursive", cursive;
     font-optical-sizing: auto;
-    /* font-weight: <weight>; */
     font-style: normal;
 }
 
@@ -522,13 +540,6 @@ button {
 .Experience_container {
     display: none;
     margin-top: -45px;
-    max-width: 67%;
-    /* background: #4a4a4a; */
-    backdrop-filter: blur(30px);
-    padding: 40px;
-    border-radius: 25px;
-    color: white;
-    line-height: 1.8;
     transition: all 1s ease;
 }
 
@@ -540,8 +551,6 @@ button {
 .Experience_container h1 {
     font-size: 2.2rem;
     margin-bottom: 20px;
-    /* text-align: center; */
-
 }
 
 
@@ -600,8 +609,7 @@ h1.page-title {
 .phone-link {
     padding: .5rem 0px;
     display: inline-block;
-    color: #000000;
-    /* blue */
+    color: #ff0000;
     font-size: 1rem;
     text-decoration: none;
     font-weight: 500;
@@ -614,7 +622,6 @@ h1.page-title {
 .phone-link:hover,
 .phone-link:focus {
     color: #ff0000;
-    /* text-decoration: underline; */
     text-decoration-color: #ff0303;
 }
 
@@ -623,8 +630,17 @@ h1.page-title {
     color: #ff0707;
 }
 
-
 @media only screen and (max-width: 768px) {
+
+    .lazy {
+        width: 12%;
+    }
+
+    header {
+        justify-content: space-around;
+        gap: 62%;
+        width: 100%;
+    }
 
     nav {
         display: block;
@@ -634,21 +650,55 @@ h1.page-title {
         border-radius: 0;
     }
 
+    nav>ul {
+        background: #ffffff;
+        color: black;
+        position: fixed;
+        top: 8vh;
+        right: 1%;
+        width: 15.3%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        padding: 19px 21px 4vh;
+        z-index: 10;
+        gap: 30px;
+        opacity: 0;
+        transform: translateX(100%);
+        pointer-events: none;
+        transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    /* when JS adds .open: fade + slide in */
+    nav>ul.open {
+        opacity: 1;
+        transform: translateX(0);
+        pointer-events: auto;
+    }
+
+    nav>ul a {
+        text-decoration: none;
+        color: #000000;
+    }
+
     .semi-nav {
         display: block;
-        background: #8d8d8d;
-        padding: 12px 3.2rem 10px 1rem;
+        background: #000000;
         position: absolute;
         right: 1%;
-        top: 102%;
+        top: 101%;
         color: white;
         border-radius: 5px;
+        width: 100%;
     }
 
     .semi-nav ul {
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin: 0;
+        padding: 0;
     }
 
     .semi-nav ul li {
@@ -657,112 +707,47 @@ h1.page-title {
 
     }
 
+    #menu-btn {
+        display: block;
+        height: 25%;
+    }
 
-#menu-btn {
-    display: block;
-    height: 25%;
+    .name-semi {
+        width: 50%;
+    }
+
+    .name {
+        justify-content: space-around;
+        gap: 6%;
+    }
+
+    .social {
+        justify-content: start;
+    }
+
+    .blur,
+    .blur2 {
+        left: 48px;
+    }
+
+    .pic img {
+        width: 174px;
+    }
+
+    .brain-div2 {
+        max-width: 57%;
+    }
+
+    .internship,
+    .braincraft {
+        width: 87%;
+    }
 }
-
-.name-semi {
-    width: 50%;
-}
-
-.name {
-    justify-content: space-around;
-    gap: 6%;
-}
-
-/* nav>ul {
-
-        transition: all 1s ease;
-        background: #ffffff;
-        color: black;
-        position: fixed;
-        top: 8vh;
-        right: 1%;
-        width: 19%;
-        display: none;
-        padding: 19px 21px;
-        justify-content: center;
-        border-radius: 5px;
-        padding-bottom: 4vh;
-        z-index: 10;
-        gap: 30px;
-    } */
-
-nav>ul {
-    background: #ffffff;
-    color: black;
-    position: fixed;
-    top: 8vh;
-    right: 1%;
-    width: 15.3%;
-    /* wider on mobile */
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
-    padding: 19px 21px 4vh;
-    z-index: 10;
-    gap: 30px;
-
-    /* animation prep */
-    opacity: 0;
-    /* transform: translateX(100%);
-        pointer-events: none; */
-    transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-/* when JS adds .open: fade + slide in */
-nav>ul.open {
-    opacity: 1;
-    /* transform: translateX(0);
-        pointer-events: auto; */
-}
-
-nav>ul a {
-    text-decoration: none;
-    color: #000000;
-}
-
-header {
-    justify-content: space-around;
-    gap: 62%;
-    width: 100%;
-}
-
-.social {
-    justify-content: start;
-}
-
-.blur,
-.blur2 {
-    left: 48px;
-}
-
-.name {
-    /* margin: 15vh 0; */
-}
-
-.pic img {
-    width: 174px;
-}
-
-.brain-div2 {
-    max-width: 57%;
-}
-
-.internship,
-.braincraft {
-    width: 87%;
-}
-}
-
 
 @media (max-width: 450px) {
-    body {
-        /* color: pink;
-        background: #777bb3;  */
+
+    .lazy {
+        width: 21%;
     }
 
     header {
@@ -801,13 +786,11 @@ header {
         font-size: 18px;
         padding: 0px 20px;
         font-weight: 200;
-        /* text-align: justify; */
     }
 
     .name {
         padding-top: 15vh;
         height: max-content;
-        /* margin-top: 14%; */
         padding: 53% 0;
         gap: 8vh;
     }
@@ -817,7 +800,6 @@ header {
     }
 
     .name-semi {
-
         width: 82%;
     }
 
@@ -836,5 +818,4 @@ header {
     .brain-div2 {
         max-width: 100%;
     }
-
 }

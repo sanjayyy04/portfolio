@@ -43,8 +43,8 @@
                     </li>
                 </ul>
 
-                <img src="assets/menu.png" alt="Menu" id="menu-btn" title="menu">
-                <img src="/assets/close-window.png" alt="Close" id="close-btn" title="close">
+                <img  class="lazy" data-src="assets/menu.png" alt="Menu" id="menu-btn" title="menu">
+                <img class="lazy" data-src="/assets/close-window.png" alt="Close" id="close-btn" title="close">
 
             </nav>
         </div>
@@ -62,16 +62,20 @@
             <!-- Social -->
             <div class="social">
                 <a href="https://www.linkedin.com/in/sanjay-chauhan-537517375" target="_blank" rel="noopener">
-                    <img src="assets/linkedin.png" alt="LinkedIn" title="LinkedIn">
+                    <img class="lazy" data-src="assets/linkedin.png" alt="LinkedIn" title="LinkedIn">
                 </a>
-                <a href="https://www.instagram.com/sanjayyy.04/"><img src="assets/instagram.png" alt="Instagram"
+
+                <a href="https://github.com/sanjayyy04"><img class="lazy" data-src="assets/github.png" alt="GitHub" title="github"></a>
+
+
+                <a href="https://www.instagram.com/sanjayyy.04/"><img class="lazy" data-src="assets/instagram.png" alt="Instagram"
                         title="Instagram"></a>
-                <a href="#"><img src="assets/facebook.png" alt="Facebook" title="Facebook"></a>
+
             </div>
         </div>
 
         <div class="pic">
-            <img src="assets/profile-Photoroom.png" alt="profile pic">
+            <img class="lazy" data-src="assets/profile-Photoroom.png" alt="profile pic">
         </div>
 
 
@@ -108,26 +112,34 @@
     <div class="skill-parent">
         <h1 class="skill-h1">Skills</h1>
         <div class="skills">
-            <img src="assets/html-5.png" alt="html" class="skills-img" title="html" loading="lazy">
+            <img class="lazy" data-src="assets/html-5.png" alt="html" class="skills-img" title="html"  >
 
-            <img src="assets/css-3.png" alt="css" class="skills-img" title="css" loading="lazy">
+            <img class="lazy" data-src="assets/css-3.png" alt="css" class="skills-img" title="css"  >
 
-            <img src="assets/js.png" alt="JavaScript" class="skills-img" title="JavaScript">
+            <img class="lazy" data-src="assets/js.png" alt="JavaScript" class="skills-img" title="JavaScript">
 
-            <img src="assets/php.png" alt="php" class="skills-img" title="php" loading="lazy">
+            <img class="lazy" data-src="assets/php.png" alt="php" class="skills-img" title="php"  >
 
-            <img src="assets/mysql.png" alt="mysql" class="skills-img" title="mysql" loading="lazy">
-
+            <img class="lazy" data-src="assets/mysql.png" alt="mysql" class="skills-img" title="mysql"  >
+            <img class="lazy" data-src="assets/java.png" alt="java" class="skills-img" title="java"  >
 
         </div>
-        <h1 class="skill-h1">Learning</h1>
-        <div class="skills">
-            <img src="assets/node.png" alt=" node-js" class="skills-img" title="node-js" loading="lazy">
-        </div>
 
+        <hr>
+        <!-- Other -->
         <h1 class="skill-h1">Other</h1>
         <div class="skills">
-            <img src="assets/java.png" alt="java" class="skills-img" title="java" loading="lazy">
+            <img class="lazy" data-src="assets/github.png" alt="github" class="skills-img" title="Github"  >
+            <img class="lazy" data-src="assets/gitlab.png" alt="gitlab" class="skills-img" title="GitLab"  >
+        </div>
+
+        <hr>
+        <!-- Learning -->
+        <h1 class="skill-h1">Learning</h1>
+        <div class="skills">
+            <img class="lazy" data-src="assets/devops.png" alt="devops" class="skills-img" title="DevOps"  >
+            <img class="lazy" data-src="assets/react.png" alt="react" class="skills-img" title="React js"  >
+            <img class="lazy" data-src="assets/node.png" alt=" node-js" class="skills-img" title="Node-js"  >
 
         </div>
 
@@ -147,7 +159,7 @@
 
         <div class="internship">
             <div>
-                <img src="assets/intern.jpg" alt="">
+                <img class="lazy" data-src="assets/intern.jpg" alt="">
             </div>
             <div>
                 <h1>Experience</h1>
@@ -187,7 +199,7 @@
 
         <div class="internship">
             <div>
-                <img src="assets/intern.jpg" alt="">
+                <img class="lazy" data-src="assets/intern.jpg" alt="">
             </div>
             <div>
                 <h1>Internship</h1>
@@ -224,7 +236,7 @@
         <div class="braincraft">
 
             <div>
-                <img src="assets/project.png" alt="">
+                <img class="lazy" data-src="assets/project.png" alt="">
             </div>
 
             <div class="brain-div2">
@@ -307,6 +319,9 @@
                 sanjaychauhan20044@gmail.com
             </a>
     </section>
+
+    <!-- The vanilla-lazyload library -->
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.2.0/dist/lazyload.min.js"></script>
 
     <script src="script.js"></script>
 </body>

@@ -34,7 +34,17 @@ window.addEventListener("scroll", () => {
     });
 });
 
-
+// LazyLoad for all .lazy images
+var lazyLoadInstance = new LazyLoad({
+    elements_selector: ".lazy",
+    threshold: 300,
+    callback_loaded: function (el) {
+        el.classList.add("loaded"); // optional fade-in class
+    },
+    callback_error: function (el) {
+        console.error("Error loading", el.getAttribute("data-src"));
+    }
+});
 
 // Experiance read more toggle
 Experience_more.addEventListener("click", function () {
