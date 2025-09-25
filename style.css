@@ -114,11 +114,26 @@ nav ul a {
     text-decoration: none;
     color: rgb(255, 255, 255);
     transition: 0.3s;
+    position: relative;
 
     &:hover {
         color: red;
-        border-bottom: 2px solid red;
     }
+}
+
+nav ul a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 1.5px;
+    background: #ff0000;
+    left: 0;
+    bottom: -4px;
+    transition: width 0.3s ease;
+}
+
+nav ul a:hover::after {
+    width: 100%;
 }
 
 .semi-nav {
@@ -506,6 +521,32 @@ button {
     max-width: 37%;
 }
 
+.openlinks {
+    position: relative;
+    /* top: 30px; */
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+    margin-right: 35px;
+
+}
+
+.openlinks::after {
+    content: "";
+    position: absolute;
+    width: 20%;
+    height: 2px;
+    background: #ff0000;
+    left: 0;
+    bottom: -4px;
+    transition: width 0.3s ease;
+}
+
+.openlinks:hover::after {
+    width: 100%;
+}
+
 .contect {
     margin-top: 68px;
     background: rgb(255, 255, 255);
@@ -541,6 +582,7 @@ button {
     display: none;
     margin-top: -45px;
     transition: all 1s ease;
+    padding: 10px 8rem;
 }
 
 .detail-container ul {
@@ -742,6 +784,7 @@ h1.page-title {
     .braincraft {
         width: 87%;
     }
+
 }
 
 @media (max-width: 450px) {
@@ -817,5 +860,10 @@ h1.page-title {
 
     .brain-div2 {
         max-width: 100%;
+    }
+
+    .detail-container,
+    .Experience_container {
+        padding: 0;
     }
 }
