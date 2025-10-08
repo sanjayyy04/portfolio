@@ -1,8 +1,13 @@
+:root {
+    --border-color: none;
+}
+
 html,
 body {
     margin: 0;
     padding: 0;
-    font-family: "Montserrat", sans-serif;
+    /* font-family: "Montserrat", sans-serif;
+    font-family: cursive; */
     font-optical-sizing: auto;
     font-style: normal;
     background-color: black;
@@ -10,7 +15,8 @@ body {
 }
 
 *::selection {
-    color: rgb(255, 0, 0);
+    color: rgb(191, 255, 0);
+    background: #a656d7;
 }
 
 .lazy.loaded {
@@ -18,27 +24,34 @@ body {
 }
 
 .lazy {
-    width: 7%;
-    height: 2%;
+    /* width: 5%;
+    height: 2%; */
     border-radius: 50%;
+    border-radius: 10px;
+
 }
 
 header {
-    background-color: #ffffff00;
+    font-family: "Montserrat", sans-serif;
+    background-color: #000000;
     display: flex;
     flex-wrap: wrap;
     gap: 11%;
     align-items: center;
     justify-content: space-around;
     max-width: 100;
-    width: 100%;
+    width: 98%;
     position: fixed;
     top: 0;
     z-index: 50;
     backdrop-filter: blur(7px);
-    box-shadow: 0px 1px 1px #84848441;
+    box-shadow: 0px 1px 1px #ffffff8f;
     animation: fadeup 1s;
     animation-timeline: view(0%, 10%);
+    border-radius: 12px;
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 @keyframes fadeup {
@@ -81,12 +94,14 @@ header {
     font-size: 22px;
     margin-left: 7px;
     color: #a177ef;
+    font-family: cursive;
 }
 
 header>.logo {
+    padding: 7px 0;
     font-size: 30px;
-    color: rgba(255, 255, 255, 0);
-    background: linear-gradient(45deg, #ffffff, #5f18e3);
+    background: radial-gradient(141.42% 141.42% at 100% 0%, #fff6, #fff0), radial-gradient(140.35% 140.35% at 100% 94.74%, #bd34fe, #bd34fe00), radial-gradient(89.94% 89.94% at 18.42% 15.79%, #41d1ff, #41d1ff00);
+    color: transparent;
     background-clip: text;
     font-weight: bold;
     font-family: "Edu NSW ACT Cursive", cursive;
@@ -96,7 +111,7 @@ header>.logo {
 
 nav {
     display: flex;
-    background: #010001;
+    /* background: #010001; */
     align-items: center;
     padding-right: 34px;
     border-radius: 43px;
@@ -117,7 +132,7 @@ nav ul a {
     position: relative;
 
     &:hover {
-        color: red;
+        color: #834ce9;
     }
 }
 
@@ -126,7 +141,7 @@ nav ul a::after {
     position: absolute;
     width: 0;
     height: 1.5px;
-    background: #ff0000;
+    background: radial-gradient(141.42% 141.42% at 100% 0%, #fff6, #fff0), radial-gradient(140.35% 140.35% at 100% 94.74%, #bd34fe, #bd34fe00), radial-gradient(89.94% 89.94% at 18.42% 15.79%, #41d1ff, #41d1ff00);
     left: 0;
     bottom: -4px;
     transition: width 0.3s ease;
@@ -141,7 +156,7 @@ nav ul a:hover::after {
 }
 
 .active {
-    color: red;
+    color: #834ce9;
 }
 
 #menu-btn {
@@ -177,6 +192,7 @@ nav ul a:hover::after {
 }
 
 .name-semi {
+    /* font-family: "Courier New", Courier, monospace; */
     width: 33%;
     animation: fadeleft 1s;
     animation-timeline: view(0%, 10%);
@@ -191,7 +207,7 @@ nav ul a:hover::after {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
-
+    font-family: "Montserrat", sans-serif;
 }
 
 .name .hello {
@@ -199,9 +215,9 @@ nav ul a:hover::after {
     font-optical-sizing: auto;
     font-style: normal;
     font-size: 18px;
-    color: rgba(255, 255, 255, 0);
+    /* color: rgba(255, 255, 255, 0);
     background: linear-gradient(45deg, #ffffff, #5f18e3);
-    background-clip: text;
+    background-clip: text; */
 }
 
 .name-para {
@@ -250,12 +266,14 @@ nav ul a:hover::after {
     height: 28px;
     object-fit: contain;
     transition: transform 0.2s ease;
-    border: 1px solid white;
+    border: 1px solid rgb(255, 255, 255);
 }
 
 .social img:hover {
-    transform: scale(1.2);
-    filter: invert(1);
+    transform: translateY(-3px);
+    /* filter: invert(1); */
+    background: radial-gradient(141.42% 141.42% at 100% 0%, #fff6, #fff0), radial-gradient(140.35% 140.35% at 100% 94.74%, #bd34fe, #bd34fe00), radial-gradient(89.94% 89.94% at 18.42% 15.79%, #41d1ff, #41d1ff00);
+    box-shadow: 0 1px #ffffffbf inset;
 }
 
 .blur {
@@ -266,7 +284,7 @@ nav ul a:hover::after {
     z-index: 1;
     width: 71%;
     height: 59vh;
-    background: linear-gradient(45deg, #561a84, #000000, #561a84);
+    background: linear-gradient(45deg, #be34fe44, #000000, #41d0ff5a);
 }
 
 .blur2 {
@@ -281,24 +299,115 @@ nav ul a:hover::after {
     background: linear-gradient(145deg, #561a84, #000000, #561a84);
 }
 
+hr {
+    border: none;
+    height: 2px;
+    border: 2px solid var(--border-color);
+}
+
+.terminal-loader {
+    margin: auto;
+    border: 0.1em solid #333;
+    background-color: #1a1a1a;
+    color: #0f0;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1em;
+    padding: 1.5em 1em;
+    width: 77%;
+    /* height: 100vh; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.terminal-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2.5em;
+    background-color: #333;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    padding: 0 0.4em;
+    box-sizing: border-box;
+}
+
+.terminal-controls {
+    float: right;
+    margin-top: 8px;
+}
+
+.control {
+    display: inline-block;
+    width: 0.6em;
+    height: 0.6em;
+    margin-left: 0.4em;
+    border-radius: 50%;
+    background-color: #777;
+}
+
+.control.close {
+    background-color: #e33;
+}
+
+.control.minimize {
+    background-color: #ee0;
+}
+
+.control.maximize {
+    background-color: #0b0;
+}
+
+.terminal-title {
+    float: left;
+    line-height: 1.5em;
+    color: #eee;
+    font-size: 25px;
+}
+
+.text {
+    border-right: 0.2em solid green;
+    margin-top: 1.5em;
+    font-size: 20px;
+}
+
+.about-p strong {
+    color: #fffb00;
+    font-weight: 500;
+}
+
+.cursor {
+    font-weight: 900;
+    font-size: 25px;
+    color: #ffffff;
+    animation: blinkCursor 1s steps(2) infinite;
+}
+
+@keyframes blinkCursor {
+    50% {
+        color: transparent;
+    }
+}
+
 .about {
+    /* font-family: "Montserrat", sans-serif;
     position: relative;
     display: flex;
-    background-color: #0000000f;
-    backdrop-filter: blur(100px);
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
     transition: all .5s ease-in-out;
-    max-width: 74%;
     margin: auto;
-    border-radius: 22px;
-    color: white;
+    color: rgb(0, 0, 0);
     transform: scale(1.05);
-    box-shadow: 0px 0px 60px 0px rgba(242, 241, 241, 0.3);
+    height: 86vh;
+    background: #b8d3ef;
+    max-width: 80%;
+    padding: 0 7%;
+    border-radius: 12px; */
     animation: fadeup;
-    animation-timeline: view();
+    animation-timeline: view(66% 0%);
 }
 
 @keyframes fadeup {
@@ -311,26 +420,28 @@ nav ul a:hover::after {
     }
 }
 
+/* 
 .about::after {
     content: "";
     z-index: -1;
     position: absolute;
     inset: 0;
-    background: linear-gradient(-45deg, #fb00ff2a 0%, #00dade0f 100%);
-    transform: translate3d(0, 0, 0) scale(0.95);
-    filter: blur(20px);
-}
+    background: linear-gradient(-45deg, #fb00ff38 0%, #00dade49 100%);
+} */
 
 .about p {
     font-size: 21px;
-    padding: 0px 60px;
+    /* padding: 0px 60px; */
     font-weight: 300;
 }
 
 .about>h1 {
+    padding: 0 5%;
     font-family: "Edu NSW ACT Cursive", cursive;
     font-optical-sizing: auto;
     font-style: normal;
+    background-color: black;
+    color: white;
 }
 
 .skill-parent {
@@ -346,15 +457,99 @@ nav ul a:hover::after {
     display: flex;
     align-items: center;
     justify-content: center;
+    background: radial-gradient(141.42% 141.42% at 100% 0%, #fff6, #fff0), radial-gradient(140.35% 140.35% at 100% 94.74%, #bd34fe, #bd34fe00), radial-gradient(89.94% 89.94% at 18.42% 15.79%, #41d1ff, #41d1ff00);
+    ;
+    color: transparent;
+    background-clip: text;
 }
 
 .skills {
+    padding: 99px 10%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 85px;
     margin-top: 3%;
     margin-bottom: 8%;
+}
+
+.skills img {
+    width: 4%;
+    height: 2%;
+    border: 2px solid white;
+    padding: 20px;
+    background: #000000ba;
+
+    border-radius: 12px;
+    border: 1px solid rgba(38, 38, 38, .7);
+    background: #181818;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity .4s ease;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.skills:nth-child(2)> :nth-child(1) {
+    filter: drop-shadow(0px 0px 20px #fc490b);
+    animation: skill-anim;
+    animation-timeline: view(50% 0%);
+}
+
+.skills:nth-child(2)> :nth-child(2) {
+    filter: drop-shadow(0px 0px 20px #2196f3);
+    animation: skill-anim;
+    animation-timeline: view(50% 0%);
+}
+
+.skills:nth-child(2)> :nth-child(3) {
+    filter: drop-shadow(0px 0px 20px #ffdf00);
+    animation: skill-anim;
+    animation-timeline: view(50% 0%);
+}
+
+.skills:nth-child(2)> :nth-child(4) {
+    filter: drop-shadow(0px 0px 20px #69cee9);
+    animation: skill-anim;
+    animation-timeline: view(50% 0%);
+}
+
+.skills:nth-child(2)> :nth-child(5) {
+    filter: drop-shadow(0px 0px 20px #6e74cf);
+    animation: skill-anim;
+    animation-timeline: view(50% 0%);
+}
+
+.skills:nth-child(2)> :nth-child(6) {
+    filter: drop-shadow(0px 0px 20px white);
+    animation: skill-anim;
+    animation-timeline: view(50% 0%);
+}
+
+.skills:nth-child(2)> :nth-child(7) {
+    filter: drop-shadow(0px 0px 20px #d3360e);
+    animation: skill-anim;
+    animation-timeline: view(50% 0%);
+}
+
+.skills:nth-child(2)> :nth-child(8) {
+    filter: drop-shadow(0px 0px 20px white);
+    animation: skill-anim;
+    animation-timeline: view(50% 0%);
+}
+
+.skills:nth-child(2)> :nth-child(9) {
+    filter: drop-shadow(0px 0px 20px #f9ab02);
+    animation: skill-anim;
+    animation-timeline: view(50% 0%);
+}
+
+.skills:nth-child(2)> :nth-child(10) {
+    filter: drop-shadow(0px 0px 20px #02f9dc);
     animation: skill-anim;
     animation-timeline: view(50% 0%);
 }
@@ -371,51 +566,7 @@ nav ul a:hover::after {
     }
 }
 
-.skills:nth-child(2)> :nth-child(1) {
-    filter: drop-shadow(0px 0px 20px #fc490b);
-}
-
-.skills:nth-child(2)> :nth-child(2) {
-    filter: drop-shadow(0px 0px 20px #2196f3);
-}
-
-.skills:nth-child(2)> :nth-child(3) {
-
-    filter: drop-shadow(0px 0px 20px #ffdf00);
-}
-
-.skills:nth-child(2)> :nth-child(4) {
-
-    filter: drop-shadow(0px 0px 20px #777bb3);
-
-}
-
-.skills:nth-child(2)> :nth-child(5) {
-
-    filter: drop-shadow(0px 0px 20px #f2f2f2);
-}
-
-.skills:nth-child(2)> :nth-child(6) {
-
-    filter: drop-shadow(0px 0px 20px #d3360e);
-}
-
-.skills:nth-child(2)> :nth-child(7) {
-
-    filter: drop-shadow(0px 0px 20px #43e74b);
-}
-
-/* .skills-img {
-    border-radius: 51px;
-    width: 81px;
-    height: 81px;
-    margin: 10px 10px;
-    transition: all .3s ease-in-out;
-    cursor: pointer;
-} */
-
 .marquee-container {
-    margin-top: 160px;
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
@@ -427,11 +578,59 @@ nav ul a:hover::after {
 }
 
 .marquee-text {
+    font-family: cursive;
     display: inline-block;
     padding-left: 100%;
     animation: marquee 30s linear infinite;
     font-size: 24px;
     color: #333;
+}
+
+.marquee-container2 {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    border-bottom: 4px solid black;
+    padding: 10px;
+    transform: rotate(360deg);
+    background: #05ffe8b6;
+    position: relative;
+    top: 17px;
+    z-index: 33;
+}
+
+.marquee-text2 {
+    font-family: cursive;
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 30s linear 7s infinite;
+    font-size: 24px;
+    color: #333;
+}
+
+.marquee-container3 {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    border-bottom: 4px solid black;
+    padding: 10px;
+    transform: rotate(358deg);
+    background: #e605ffb6;
+    /* color: white; */
+    position: relative;
+    top: 37px;
+    z-index: 33;
+}
+
+.marquee-text3 {
+    font-family: cursive;
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 30s linear 10s infinite;
+    font-size: 24px;
+    color: #ffffff;
 }
 
 @keyframes marquee {
@@ -452,36 +651,57 @@ nav ul a:hover::after {
 }
 
 button {
+    background: radial-gradient(141.42% 141.42% at 100% 0%, #fff6, #fff0), radial-gradient(140.35% 140.35% at 100% 94.74%, #bd34fe, #bd34fe00), radial-gradient(89.94% 89.94% at 18.42% 15.79%, #41d1ff, #41d1ff00);
+    box-shadow: 0 1px #ffffffbf inset;
     padding: 10px;
+    color: white;
     border-radius: 7px;
     border: none;
-    transition: all .5s ease;
     margin-top: 14px;
+    transition: all .5s ease;
 
     &:hover {
-        background-color: #f03232;
-        color: white;
+        background-color: #ffffff97;
+        transform: translateY(-3px);
     }
 }
 
 .internship,
-.braincraft,
-.Experience_container {
+.braincraft {
+    font-family: cursive;
+    border: 2px solid var(--border-color);
     margin: auto;
-    border-radius: 30px;
+    border-radius: 12px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
-    gap: 48px;
+    /* justify-content: center; */
+    /* gap: 48px; */
     color: white;
-    padding: 20px;
+    padding: 20px 50px;
     background: #292929;
-    width: 80%;
+    width: 73%;
     transition: all 1s ease;
     position: relative;
     animation: fadeup;
-    animation-timeline: view(20% 0%);
+    animation-timeline: view(40% 0%);
+}
+
+.colorpalet1 {
+    /* background: linear-gradient(150deg, #9bc4de, #ffffd5); */
+    background-color: rgb(60, 254, 0);
+    color: black;
+}
+
+.colorpalet2 {
+    /* background: linear-gradient(150deg, #04ff00, #d372d7); */
+    background-color: #d372d7;
+    color: rgb(255, 255, 255);
+}
+
+.colorpalet3 {
+    background: #9f00ff;
+    color: #000000;
 }
 
 #Internship_more,
@@ -492,8 +712,8 @@ button {
     padding: 3px 11px;
     border-radius: 50%;
     display: flex;
-    right: 5px;
-    bottom: 5px;
+    right: 0px;
+    bottom: 0px;
     background: #ffffff;
     color: #000000;
     font-size: 29px;
@@ -507,19 +727,17 @@ button {
     }
 }
 
+/* 
 .internship img,
 .braincraft img {
     width: 500px;
     border-radius: calc(40px - 20px);
-}
+    border: 2px solid var(--border-color);
+} */
 
-.braincraft :nth-child(2) {
+/* .braincraft :nth-child(2) {
     flex-wrap: wrap;
-}
-
-.brain-div2 {
-    max-width: 37%;
-}
+} */
 
 .openlinks {
     position: relative;
@@ -530,16 +748,22 @@ button {
     font-weight: 400;
     margin-right: 35px;
 
+    &:hover {
+        background: radial-gradient(141.42% 141.42% at 100% 0%, #fff6, #fff0), radial-gradient(140.35% 140.35% at 100% 94.74%, #bd34fe, #bd34fe00), radial-gradient(89.94% 89.94% at 18.42% 15.79%, #41d1ff, #41d1ff00);
+        background-clip: text;
+        color: transparent;
+    }
+
 }
 
 .openlinks::after {
     content: "";
     position: absolute;
     width: 20%;
-    height: 2px;
-    background: #ff0000;
+    height: 2.5px;
+    background: radial-gradient(141.42% 141.42% at 100% 0%, #fff6, #fff0), radial-gradient(140.35% 140.35% at 100% 94.74%, #bd34fe, #bd34fe00), radial-gradient(89.94% 89.94% at 18.42% 15.79%, #41d1ff, #41d1ff00);
     left: 0;
-    bottom: -4px;
+    bottom: -5px;
     transition: width 0.3s ease;
 }
 
@@ -555,6 +779,8 @@ button {
     align-items: center;
     justify-content: center;
     text-align: center;
+    animation: fadeup;
+    animation-timeline: view(95% 0%);
 }
 
 .contact-semi {
@@ -569,20 +795,32 @@ button {
     font-family: "Edu NSW ACT Cursive", cursive;
     font-optical-sizing: auto;
     font-style: normal;
+    background: radial-gradient(141.42% 141.42% at 100% 0%, #fff6, #fff0), radial-gradient(140.35% 140.35% at 100% 94.74%, #bd34fe, #bd34fe00), radial-gradient(89.94% 89.94% at 18.42% 15.79%, #41d1ff, #41d1ff00);
+    background-clip: text;
+    color: transparent;
+    border-radius: 4px;
 }
 
 .contact-semi p {
     font-family: "Edu NSW ACT Cursive", cursive;
     font-optical-sizing: auto;
     font-style: normal;
+    background: radial-gradient(141.42% 141.42% at 100% 0%, #fff6, #fff0), radial-gradient(140.35% 140.35% at 100% 94.74%, #bd34fe, #bd34fe00), radial-gradient(89.94% 89.94% at 18.42% 15.79%, #41d1ff, #41d1ff00);
+    background-clip: text;
+    color: transparent;
+    padding: 0 10px;
+    border-radius: 4px;
+    font-size: 22px;
+    margin-bottom: 0;
+    margin: 0;
+    font-weight: 600;
 }
 
 .detail-container,
 .Experience_container {
     display: none;
-    margin-top: -45px;
     transition: all 1s ease;
-    padding: 10px 8rem;
+    margin-top: 1%;
 }
 
 .detail-container ul {
@@ -598,12 +836,12 @@ button {
 
 .project-container {
     display: none;
-    max-width: 887px;
+    /* max-width: 887px; */
     margin: auto;
 }
 
 .brain-project {
-    background: #ffffff0f;
+    background: #ffffff2b;
     backdrop-filter: blur(30px);
     border-radius: 25px;
     padding: 30px;
@@ -636,12 +874,6 @@ button {
     margin-bottom: 6px;
 }
 
-h1.page-title {
-    text-align: center;
-    font-size: 2.4rem;
-    margin-bottom: 50px;
-}
-
 .contact-info {
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -672,10 +904,36 @@ h1.page-title {
     color: #ff0707;
 }
 
+/* ================================================== loader ===================================================== */
+.spinner {
+    background-image: linear-gradient(rgb(186, 66, 255) 35%, rgb(0, 225, 255));
+    width: 100px;
+    height: 100px;
+    animation: spinning82341 1.7s linear infinite;
+    text-align: center;
+    border-radius: 50px;
+    filter: blur(1px);
+    box-shadow: 0px -5px 20px 0px rgb(186, 66, 255), 0px 5px 20px 0px rgb(0, 225, 255);
+}
+
+.spinner1 {
+    background-color: rgb(36, 36, 36);
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    filter: blur(10px);
+}
+
+@keyframes spinning82341 {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 @media only screen and (max-width: 768px) {
 
-    .lazy {
-        width: 12%;
+    .skills img {
+        width: 10%;
     }
 
     header {
@@ -752,6 +1010,8 @@ h1.page-title {
     #menu-btn {
         display: block;
         height: 25%;
+        filter: invert(1);
+        background: #ffffff;
     }
 
     .name-semi {
@@ -772,25 +1032,43 @@ h1.page-title {
         left: 48px;
     }
 
-    .pic img {
-        width: 174px;
-    }
-
     .brain-div2 {
         max-width: 57%;
     }
 
-    .internship,
-    .braincraft {
-        width: 87%;
+
+    .braincraft,
+    .internship {
+        width: 84%;
+        margin: auto;
+        padding: 10px 17px;
+        animation: cards;
+        animation-timeline: view(70% 0%);
+    }
+
+    @keyframes cards {
+        from {
+            transform: rotateZ(45deg);
+            opacity: 0;
+        }
+
+        to {
+            transform: rotateZ(0);
+            opacity: 1;
+        }
+    }
+
+    .terminal-loader {
+        width: 92%;
     }
 
 }
 
 @media (max-width: 450px) {
 
-    .lazy {
-        width: 21%;
+    .skills img {
+        width: 20%;
+        padding: 5%;
     }
 
     header {
@@ -821,14 +1099,16 @@ h1.page-title {
     }
 
     .about {
-        max-width: 92%;
+        max-width: 100%;
         text-align: start;
+        height: fit-content;
+        animation-timeline: view(95% 0%);
     }
 
-    .about p {
-        font-size: 18px;
-        padding: 0px 20px;
-        font-weight: 200;
+    .about-p {
+        font-size: 20px;
+        font-weight: 300;
+        /* paddin/g: 0px 20px; */
     }
 
     .name {
@@ -838,9 +1118,7 @@ h1.page-title {
         gap: 8vh;
     }
 
-    .pic img {
-        padding: 0px 81px;
-    }
+    /* removed .pic img (not used) */
 
     .name-semi {
         width: 82%;
@@ -865,5 +1143,9 @@ h1.page-title {
     .detail-container,
     .Experience_container {
         padding: 0;
+    }
+
+    .marquee-container3 {
+        margin-bottom: 38%;
     }
 }

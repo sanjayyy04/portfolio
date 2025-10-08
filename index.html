@@ -4,7 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanjay | Portfolio</title>
+
+    <title>Sanjay Chauhan | Full Stack Developer Portfolio</title>
+    <meta name="description"
+        content="Sanjay Chauhan - Full Stack Web Developer. Expertise in HTML, CSS, JavaScript, PHP, MySQL, and Java. Explore projects including BrainCraft, Spotify Clone, and more.">
+    <meta name="keywords"
+        content="Full Stack Developer, Web Developer, HTML, CSS, JavaScript, PHP, MySQL, Java, Portfolio, BrainCraft, Spotify Clone">
+    <meta name="author" content="Sanjay Chauhan">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Sanjay Chauhan | Full Stack Developer Portfolio">
+    <meta property="og:description"
+        content="Explore the portfolio of Sanjay Chauhan, a skilled Full Stack Web Developer.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-portfolio-domain.com/">
+    <meta property="og:image" content="https://your-portfolio-domain.com/assets/profile-Photoroom.png">
+
+    <!-- Fonts (optimized loading with display=swap) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
@@ -15,10 +35,10 @@
 </head>
 
 <body>
-
+    <!--================================== header section ================================== -->
     <header>
         <div class="logo">Portfolio</div>
-        <div class="menu">
+        <div>
             <nav>
                 <ul id="ul">
                     <li><a href="#name">Home</a></li>
@@ -44,20 +64,22 @@
                 </ul>
 
                 <img class="lazy" data-src="assets/menu.png" alt="Menu" id="menu-btn" title="menu">
-                <img class="lazy" data-src="/assets/close-window.png" alt="Close" id="close-btn" title="close">
+                <img class="lazy" data-src="assets/close-window.png" alt="Close" id="close-btn" title="close">
 
             </nav>
         </div>
     </header>
 
+    <!--================================== name section ================================== -->
     <section class="name" id="name">
+
         <div class="name-semi">
             <p> <span class="hello">Hello</span>, My Name Is </p>
             <Span>Sanjay Chauhan</Span>
             <div class="name-para">
-                <p> And I'm a<span>Full Stack Developr, <br> UI UX Designer.</span></p>
+                <p> And I'm a<span>Full Stack Developer.</span></p>
             </div>
-            <a href="assets/Sanjay.PDF" download=""><button>Download CV</button>
+            <a href="assets/resume.pdf" download=""><button>Download CV</button>
             </a>
             <!-- Social -->
             <div class="social">
@@ -75,103 +97,172 @@
             </div>
         </div>
 
-        <div class="pic">
-            <img class="lazy" data-src="assets/profile-Photoroom.png" alt="profile pic">
+        <div>
+            <img class="lazy skills-img" data-src="assets/profile-Photoroom.png" alt="profile pic">
         </div>
 
 
     </section>
 
-    <div class="blur">hello</div>
+    <!-- <div class="blur">hello</div>
+    <div class="blur2"></div> -->
 
-    <section class="about" id="about">
+    <!-- <section class="about" id="about">
         <h1>About Me</h1>
-        <p><strong>I am Sanjay Chauhan</strong>, a dedicated and results-driven <strong>Full-Stack Web
+        <p class="about-p"><strong>I am Sanjay Chauhan</strong>, a dedicated and results-driven <strong>Front-End
+                focused Web
                 Developer
             </strong> with a strong foundation
-            in both front-end and back-end technologies. I specialize in designing and developing modern,
+            in front-end and intermediate knowlegde of back-end technologies. I specialize in designing and developing
+            modern,
             responsive web applications that are not only visually engaging but also functionally
-            robust.<br>
-            <br>
-            My core skill set includes <strong>HTML, CSS, JavaScript, PHP, MySQL, and basic proficiency in
-                Java</strong>. Over
-            the course of my learning journey, I have successfully built and deployed multiple projects such
-            as
-            <strong>
-                a child adoption management system, an aptitude testing platform, and a music streaming
-                interface inspired by Spotify </strong>. These projects reflect my ability to
-            combine aesthetic design principles with technical functionality.<br><br>
-
-            I am highly passionate about leveraging technology to solve real-world problems, with a strong
-            emphasis on code quality, performance optimization, and user experience. I am also committed to
-            continuous learning and staying updated with the latest advancements in web development.
+            robust.
         </p>
+        <p class="about-p">
+            My skill set includes front-end technologies such as HTML, CSS, JavaScript, and React, and back-end
+            technologies like
+            PHP and MySQL. I also have intermediate knowledge of Node.js and experience working with Java.
+            I have strengthened and refined these skills by building real-world projects that allowed me to apply my
+            knowledge in
+            practical, hands-on scenarios.
+        </p>
+        <p class="about-p">
+            <strong>I am also skilled in DevOps practices </strong> — proficient with Git/GitHub, GitLab for version
+            control, CICD
+            Pipelines, Docker. I am passionate about continuous learning and staying updated with the latest
+            industry trends to ensure that my skills remain relevant and cutting-edge.
+        </p>
+    </section> -->
+
+    <!--================================== about section ================================== -->
+    <section class="about" id="about">
+        <div class="terminal-loader">
+            <div class="terminal-header">
+                <div class="terminal-title">About me </div>
+                <div class="terminal-controls">
+                    <div class="control close">
+
+                    </div>
+                    <div class="control minimize">
+
+                    </div>
+                    <div class="control maximize">
+
+                    </div>
+                </div>
+            </div>
+            <div class="text">
+                <p class="about-p"><strong>I am Sanjay Chauhan</strong>, a dedicated and results-driven <strong>
+                        Fullstack Developer
+                    </strong> with a strong foundation
+                    in front-end back-end technologies. I specialize in designing and
+                    developing
+                    modern,
+                    responsive web applications that are not only visually engaging but also functionally
+                    robust.
+                    <br><br>
+
+                    My skill set includes front-end technologies such as HTML, CSS, JavaScript, and React, and back-end
+                    technologies like
+                    PHP and MySQL. I also have intermediate knowledge of Node.js and experience working with Java.
+                    I have strengthened and refined these skills by building real-world projects that allowed me to
+                    apply my
+                    knowledge in
+                    practical, hands-on scenarios.
+
+                    <br><br>
+                    <strong>I am also skilled in DevOps practices </strong> — proficient with Git/GitHub, GitLab for
+                    version
+                    control, CICD
+                    Pipelines, Docker. I am passionate about continuous learning and staying updated with the latest
+                    industry trends to ensure that my skills remain relevant and cutting-edge.<span
+                        class="cursor">|</span>
+                </p>
+
+            </div>
+        </div>
     </section>
 
-    <div class="blur2"></div>
-
+    <!--================================== about section ================================== -->
     <div class="skill-parent">
         <h1 class="skill-h1">Skills</h1>
         <div class="skills">
-            <img class="lazy" data-src="assets/html-5.png" alt="html" class="skills-img" title="html">
+            <img class="lazy skills-img" data-src="assets/html-5.png" alt="html" title="html">
 
-            <img class="lazy" data-src="assets/css-3.png" alt="css" class="skills-img" title="css">
+            <img class="lazy skills-img" data-src="assets/css-3.png" alt="css" title="css">
 
-            <img class="lazy" data-src="assets/js.png" alt="JavaScript" class="skills-img" title="JavaScript">
+            <img class="lazy skills-img" data-src="assets/js.png" alt="JavaScript" title="JavaScript">
 
-            <img class="lazy" data-src="assets/php.png" alt="php" class="skills-img" title="php">
+            <img class="lazy skills-img" data-src="assets/react.png" alt="react" title="React js">
 
-            <img class="lazy" data-src="assets/mysql.png" alt="mysql" class="skills-img" title="mysql">
-            <img class="lazy" data-src="assets/java.png" alt="java" class="skills-img" title="java">
+            <img class="lazy skills-img" data-src="assets/php.png" alt="php" title="php">
+
+            <img class="lazy skills-img" data-src="assets/mysql.png" alt="mysql" title="mysql">
+
+            <img class="lazy skills-img" data-src="assets/java.png" alt="java" title="java">
+
+            <img class="lazy skills-img" data-src="assets/github.png" alt="github" title="Github">
+
+            <img class="lazy skills-img" data-src="assets/gitlab.png" alt="gitlab" title="GitLab">
+
+            <img class="lazy skills-img" data-src="assets/docker.png" alt="gitlab" title="Docker">
 
         </div>
 
         <hr>
-        <!-- Other -->
-        <h1 class="skill-h1">Other</h1>
-        <div class="skills">
-            <img class="lazy" data-src="assets/github.png" alt="github" class="skills-img" title="Github">
-            <img class="lazy" data-src="assets/gitlab.png" alt="gitlab" class="skills-img" title="GitLab">
-        </div>
-
-        <hr>
-        <!-- Learning -->
+        <!-- Learning
         <h1 class="skill-h1">Learning</h1>
         <div class="skills">
-            <img class="lazy" data-src="assets/devops.png" alt="devops" class="skills-img" title="DevOps">
-            <img class="lazy" data-src="assets/react.png" alt="react" class="skills-img" title="React js">
-            <img class="lazy" data-src="assets/node.png" alt=" node-js" class="skills-img" title="Node-js">
+            <img class="lazy skills-img" data-src="assets/devops.png" alt="devops" title="DevOps">
+            <img class="lazy skills-img" data-src="assets/node.png" alt=" node-js" title="Node-js">
 
-        </div>
+        </div> -->
 
     </div>
 
+    <!--==================================marque section ================================== -->
     <div class="marquee-container">
-        <div class="marquee-text"> Skilled Full-Stack Developer • HTML, CSS, JavaScript, PHP, MySQL, Java • Focused
-            on
-            clean code, responsive design, and performance-driven development • Eager to contribute to impactful
-            tech
-            teams.
-        </div>
+        <div class="marquee-text"> Frontend Skills
 
+            HTML, CSS, JavaScript
+
+            Strong focus on clean, maintainable code
+
+            Skilled in responsive design for seamless cross-device experiences
+
+            Emphasizes performance-driven development and user-friendly interfaces
+        </div>
+    </div>
+    <div class="marquee-container2">
+        <div class="marquee-text2"> Backend Skills
+
+            PHP, MySQL, Java
+
+            Experience in server-side logic, database management, and API integration
+
+            Capable of building secure, scalable, and efficient backend systems
+        </div>
+    </div>
+    <div class="marquee-container3">
+        <div class="marquee-text3"> I’m also skilled in DevOps practices — proficient with Git/GitHub, GitLab for
+            version control, CICD Pipelines, Docker.
+        </div>
     </div>
 
+    <!--================================== project section ================================== -->
     <section class="projects" id="projects">
 
         <!-- Experiance -->
-        <div class="internship">
-            <div>
-                <img class="lazy" data-src="assets/intern.jpg" alt="">
-            </div>
+        <div class="internship colorpalet1">
             <div>
                 <h1>Experience</h1>
                 <p>
-                    Frontend Trainee Developer <strong>NITSAN Technologies, <br> Bhavnagar</strong>
+                    Frontend Trainee Program <strong>NITSAN Technologies, Bhavnagar</strong>
                 </p>
                 <a href="https://github.com/sanjayyy04/hdnet-tainee-project-Nitsan-" target="_blank"
-                    class="openlinks">open Code</a>
+                    class="openlinks">open Code ></a>
                 <a href="https://tranquil-heliotrope-cb44ef.netlify.app/" target="_blank" class="openlinks">open
-                    Site</a>
+                    Site ></a>
                 <button id="Experience_more">></button>
             </div>
 
@@ -184,7 +275,8 @@
                     environment.
                 </p>
 
-                <p>I worked on a complete project from scratch using HTML, CSS, and JavaScript, implementing responsive
+                <p>I worked on a complete project from scratch using HTML, CSS, and JavaScript, implementing
+                    responsive
                     UI and optimizing
                     page performance with techniques like lazy loading for faster site loading times.
                 </p>
@@ -196,7 +288,8 @@
                 </p>
 
                 <p>
-                    This experience enhanced my real-world understanding of full-stack development, secure coding, and
+                    This experience enhanced my real-world understanding of full-stack development, secure coding,
+                    and
                     user-focused design.
                 </p>
 
@@ -204,14 +297,11 @@
         </div>
 
         <!-- internship -->
-        <div class="internship">
-            <div>
-                <img class="lazy" data-src="assets/intern.jpg" alt="">
-            </div>
+        <div class="internship internship-div colorpalet2">
             <div>
                 <h1>Internship</h1>
                 <p>
-                    Internship at <strong>Sidhwani Technologies, Bhavnagar</strong><br> as a <strong>Full-Stack
+                    Internship at <strong>Sidhwani Technologies, Bhavnagar</strong> as a <strong>Full-Stack
                         Developer</strong>.
                 </p>
                 <a href="https://github.com/sanjayyy04/child_adoption_portal-internship-project" target="_blank"
@@ -237,7 +327,8 @@
                     <li>MySQL for data storage and retrieval</li>
                 </ul>
                 <p>
-                    This experience enhanced my real-world understanding of full-stack development, secure coding, and
+                    This experience enhanced my real-world understanding of full-stack development, secure coding,
+                    and
                     user-focused design.
                 </p>
 
@@ -245,11 +336,7 @@
         </div>
 
         <!-- braincraft -->
-        <div class="braincraft">
-
-            <div>
-                <img class="lazy" data-src="assets/project.png" alt="">
-            </div>
+        <div class="braincraft colorpalet3">
 
             <div class="brain-div2">
                 <h1>Collage & Other Projects</h1>
@@ -261,7 +348,6 @@
 
             </div>
 
-
             <div class="project-container" id="project-container">
 
                 <!-- Project 1: Aptitude Web App -->
@@ -270,7 +356,8 @@
                     <p>
                         BrainCraft is an interactive web application designed to improve logical thinking and
                         problem-solving abilities.
-                        It features a clean, modern UI and is optimized for students preparing for competitive exams.
+                        It features a clean, modern UI and is optimized for students preparing for competitive
+                        exams.
                     </p>
                     <ul>
                         <li>Developed using HTML, CSS, JavaScript, and PHP</li>
@@ -286,9 +373,11 @@
                 <div class="brain-project">
                     <h2>ReadMate – Digital Book Sharing Platform</h2>
                     <p>
-                        ReadMate is a simple and intuitive platform for book lovers to share and explore digital reading
+                        ReadMate is a simple and intuitive platform for book lovers to share and explore digital
+                        reading
                         material.
-                        Users can upload, preview, and download books or notes, making it ideal for student communities.
+                        Users can upload, preview, and download books or notes, making it ideal for student
+                        communities.
                     </p>
                     <ul>
                         <li>Built using HTML, CSS, JavaScript, and PHP with MySQL database</li>
@@ -302,7 +391,8 @@
                 <div class="brain-project">
                     <h2>Spotify Clone</h2>
                     <p>
-                        A front-end music streaming interface inspired by Spotify. It replicates essential features and
+                        A front-end music streaming interface inspired by Spotify. It replicates essential features
+                        and
                         layout for
                         a visually rich and interactive experience.
                     </p>
@@ -319,6 +409,7 @@
 
     </section>
 
+    <!--================================== footersection ================================== -->
     <section class="contect" id="contect">
         <div class="contact-semi">
             <h1>Get in Touch</h1>
@@ -333,6 +424,13 @@
                 sanjaychauhan20044@gmail.com
             </a>
     </section>
+
+    <!--================================== loader ================================== -->
+    <div id="loader">
+        <div class="spinner">
+            <div class="spinner1"></div>
+        </div>
+    </div>
 
     <!-- The vanilla-lazyload library -->
     <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.2.0/dist/lazyload.min.js"></script>
