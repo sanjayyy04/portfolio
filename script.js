@@ -8,6 +8,8 @@ let project_container = document.getElementById("project-container");
 let menu_btn = document.getElementById("menu-btn");
 let close_btn = document.getElementById("close-btn");
 let menu = document.getElementById("ul");
+let control_close = document.getElementById("control-close");
+let about = document.getElementById("about");
 
 const braincraft = document.querySelector(".braincraft");
 const internship = document.querySelector(".internship");
@@ -46,6 +48,10 @@ var lazyLoadInstance = new LazyLoad({
     callback_error: function (el) {
         console.error("Error loading", el.getAttribute("data-src"));
     }
+});
+
+control_close.addEventListener("click", function () {
+    about.style.display = "none";
 });
 
 // ------------------------------------------------ Experience Toggle ------------------------------------------------

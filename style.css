@@ -351,6 +351,12 @@ hr {
 
 .control.close {
     background-color: #e33;
+
+    &:hover {
+        background-color: red;
+        transform: scale(1.2);
+        cursor: pointer;
+    }
 }
 
 .control.minimize {
