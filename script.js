@@ -126,33 +126,33 @@ document.addEventListener("click", function (e) {
 
 // --------------------------------------- Anti Inspect / DevTools Detection --------------------------------------
 
-// Disable right-click
-document.addEventListener("contextmenu", e => e.preventDefault());
+// // Disable right-click
+// document.addEventListener("contextmenu", e => e.preventDefault());
 
-// Disable common inspect shortcuts
-document.onkeydown = function (e) {
-    if (
-        e.keyCode === 123 || // F12
-        (e.ctrlKey && e.shiftKey && e.keyCode === 73) || // Ctrl+Shift+I
-        (e.ctrlKey && e.shiftKey && e.keyCode === 74) || // Ctrl+Shift+J
-        (e.ctrlKey && e.keyCode === 85) // Ctrl+U
-    ) {
-        e.preventDefault();
-    }
-};
+// // Disable common inspect shortcuts
+// document.onkeydown = function (e) {
+//     if (
+//         e.keyCode === 123 || // F12
+//         (e.ctrlKey && e.shiftKey && e.keyCode === 73) || // Ctrl+Shift+I
+//         (e.ctrlKey && e.shiftKey && e.keyCode === 74) || // Ctrl+Shift+J
+//         (e.ctrlKey && e.keyCode === 85) // Ctrl+U
+//     ) {
+//         e.preventDefault();
+//     }
+// };
 
-// Detect if DevTools are open (for casual users)
-setInterval(function () {
-    const threshold = 160;
-    if (
-        window.outerWidth - window.innerWidth > threshold ||
-        window.outerHeight - window.innerHeight > threshold
-    ) {
-        document.body.innerHTML = "";
-        alert("Developer tools are disabled on this site.");
-        window.location.reload();
-    }
-}, 1000);
+// // Detect if DevTools are open (for casual users)
+// setInterval(function () {
+//     const threshold = 160;
+//     if (
+//         window.outerWidth - window.innerWidth > threshold ||
+//         window.outerHeight - window.innerHeight > threshold
+//     ) {
+//         document.body.innerHTML = "";
+//         alert("Developer tools are disabled on this site.");
+//         window.location.reload();
+//     }
+// }, 1000);
 
 // --------------------------------------------------- Loader ---------------------------------------------------------
 
