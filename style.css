@@ -415,7 +415,11 @@ hr {
     }
 }
 
-
+.about {
+    width: auto;
+    height: 90vh;
+    align-content: center;
+}
 
 .about-p {
     padding: 0 20px;
@@ -432,7 +436,7 @@ hr {
 }
 
 .skill-parent {
-    margin-top: 175px;
+    height: 100vh;
     transition: all .5s ease-in-out;
     font-family: "Edu NSW ACT Cursive", cursive;
     font-optical-sizing: auto;
@@ -442,7 +446,7 @@ hr {
 .skill-h1 {
     color: transparent;
     -webkit-text-stroke: 1px white;
-    padding-left: 13%;
+    padding-left: 12%;
     font-size: 4rem;
     font-weight: 900;
     animation-timeline: view(0%, 10%);
@@ -451,7 +455,7 @@ hr {
 }
 
 .skills {
-    padding: 0px 6%;
+    padding: 0px 9%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
