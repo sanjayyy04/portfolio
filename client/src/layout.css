@@ -1,0 +1,290 @@
+/* Layout primitives shared by home, project archive, contact, and case studies. */
+.container {
+  width: min(100% - (var(--page-gutter) * 2), var(--content-max));
+  margin-inline: auto;
+}
+
+/* Standardized content rails: use existing section shells to preserve animations
+   and DOM structure while aligning all pages to the same 1440px content grid. */
+.about-layout,
+.skills-frame,
+.journey-shell,
+.projects-sticky,
+.contact-shell,
+.footer-bottom,
+.hero-content,
+.detail-nav,
+.detail-hero,
+.detail-overview,
+.detail-showcase,
+.detail-columns,
+.detail-flow,
+.detail-links,
+.detail-footer,
+.projects-index-hero,
+.projects-index-grid,
+.projects-index-end,
+.contact-index-intro {
+  max-width: var(--content-max);
+  margin-inline: auto;
+}
+
+/* The detail pages already have an outer page gutter; avoid double-padding. */
+.project-detail-page > .detail-nav,
+.project-detail-page > .detail-hero,
+.project-detail-page > .detail-overview,
+.project-detail-page > .detail-showcase,
+.project-detail-page > .detail-columns,
+.project-detail-page > .detail-flow,
+.project-detail-page > .detail-links,
+.project-detail-page > .detail-footer,
+.project-detail-page > .projects-index-hero,
+.project-detail-page > .projects-index-grid,
+.project-detail-page > .projects-index-end,
+.project-detail-page > .contact-index-intro {
+  width: 100%;
+}
+
+/* The home hero uses a centered 1440px canvas with responsive side gutters. */
+.hero-content {
+  width: 100%;
+  padding-inline: var(--page-gutter-wide);
+}
+.nav {
+  width: min(100%, var(--content-max));
+  padding-inline: max(var(--page-gutter), calc((100vw - var(--content-max)) / 2));
+}
+.hero-foot {
+  left: 50%;
+  right: auto;
+  width: min(100%, var(--content-max));
+  transform: translateX(-50%);
+  padding-inline: var(--page-gutter);
+}
+
+/* Section shell widths are consistent, while each section retains its own
+   vertical spacing, grid, scroll behavior, and animation hooks. */
+.about-layout { width: min(100% - (var(--page-gutter) * 2), var(--content-max)); }
+.skills-frame,
+.journey-shell,
+.projects-sticky,
+.contact-shell,
+.footer-bottom { width: min(100% - (var(--page-gutter) * 2), var(--content-max)); }
+.contact-index-page .contact-shell { max-width: var(--content-max); }
+.projects-index-hero,
+.projects-index-grid,
+.projects-index-end,
+.contact-index-intro { box-sizing: border-box; }
+
+:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+}
+
+img, video, canvas, svg { max-width: 100%; }
+
+@media (max-width: 700px) {
+  .container,
+  .about-layout,
+  .skills-frame,
+  .journey-shell,
+  .projects-sticky,
+  .contact-shell,
+  .footer-bottom { width: calc(100% - 40px); }
+  .hero-content { padding-inline: 22px; }
+  .nav { width: calc(100% - 28px); margin: 10px 14px 0; padding: 12px 15px; }
+  .hero-foot { padding-inline: 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within { scroll-behavior: auto; }
+}
+
+/* Wide desktop: let the shared rails grow beyond 1440px while retaining
+   comfortable gutters and the same centered composition. */
+@media (min-width: 1600px) {
+  :root {
+    --page-gutter: clamp(72px, 5vw, 112px);
+    --page-gutter-wide: clamp(88px, 6vw, 136px);
+  }
+
+  .about-layout,
+  .skills-frame,
+  .journey-shell,
+  .projects-sticky,
+  .contact-shell,
+  .footer-bottom {
+    width: min(calc(100% - (var(--page-gutter) * 2)), var(--content-max));
+  }
+
+  .hero-content { padding-inline: var(--page-gutter-wide); }
+}
+
+@media (min-width: 2200px) {
+  :root {
+    --page-gutter: clamp(112px, 5.5vw, 160px);
+    --page-gutter-wide: clamp(136px, 6vw, 184px);
+  }
+}
+
+/* Final alignment pass: every section uses one shared left/right content rail.
+   Remove nested section padding that previously pushed individual sections
+   inward by different amounts. Keep full-bleed backgrounds and animations. */
+:root {
+  --content-rail-width: min(calc(100% - (var(--page-gutter) * 2)), var(--content-max));
+}
+
+.container,
+.about-layout,
+.skills-frame,
+.journey-shell,
+.projects-sticky,
+.contact-shell,
+.footer-bottom,
+.projects-index-hero,
+.projects-index-grid,
+.projects-index-end,
+.contact-index-intro,
+.detail-nav,
+.detail-hero,
+.detail-overview,
+.detail-showcase,
+.detail-columns,
+.detail-flow,
+.detail-links,
+.detail-footer {
+  width: var(--content-rail-width);
+  max-width: var(--content-max);
+  margin-inline: auto;
+}
+
+.hero-content.container {
+  width: var(--content-rail-width);
+  padding-inline: 0;
+  max-width: var(--content-max);
+}
+
+.nav {
+  width: 100%;
+  max-width: none;
+  padding-inline: max(var(--page-gutter), calc((100vw - var(--content-max)) / 2));
+}
+
+.hero-foot {
+  padding-inline: 0;
+}
+
+#about {
+  padding-inline: 0;
+}
+
+#about .about-layout.container {
+  width: var(--content-rail-width);
+}
+
+.skills-section {
+  padding-inline: 0;
+}
+
+.skills-frame {
+  width: var(--content-rail-width);
+}
+
+.skills-intro-grid {
+  padding-inline: 0;
+}
+
+.projects-sticky {
+  padding-inline: 0;
+}
+
+.projects-intro {
+  left: 0;
+}
+
+.projects-footer {
+  left: 0;
+  right: 0;
+}
+
+/* Dedicated archive and case-study routes share the same rail as the home page. */
+.projects-index-page .projects-index-hero,
+.projects-index-page .projects-index-grid,
+.projects-index-page .projects-index-end,
+.contact-index-page .contact-index-intro,
+.project-detail-page > .detail-nav,
+.project-detail-page > .detail-hero,
+.project-detail-page > .detail-overview,
+.project-detail-page > .detail-showcase,
+.project-detail-page > .detail-columns,
+.project-detail-page > .detail-flow,
+.project-detail-page > .detail-links,
+.project-detail-page > .detail-footer {
+  width: var(--content-rail-width);
+  max-width: var(--content-max);
+  margin-inline: auto;
+}
+
+@media (max-width: 700px) {
+  :root { --page-gutter: 20px; --page-gutter-wide: 20px; }
+  .container,
+  .about-layout,
+  .skills-frame,
+  .journey-shell,
+  .projects-sticky,
+  .contact-shell,
+  .footer-bottom,
+  .projects-index-hero,
+  .projects-index-grid,
+  .projects-index-end,
+  .contact-index-intro,
+  .detail-nav,
+  .detail-hero,
+  .detail-overview,
+  .detail-showcase,
+  .detail-columns,
+  .detail-flow,
+  .detail-links,
+  .detail-footer {
+    width: calc(100% - 40px);
+  }
+  .hero-content.container { width: calc(100% - 40px); padding-inline: 0; }
+  .nav { padding-inline: 20px; }
+  .hero-foot { padding-inline: 0; }
+  .skills-intro-grid { padding-inline: 0; }
+}
+
+.project-detail-page {
+  padding-inline: 0;
+}
+
+/* Alignment correction: section-level horizontal padding was nesting these
+   content rails inside the hero. Keep backgrounds full-bleed, but let the
+   shared rail control all foreground left/right edges. */
+#about,
+.journey-section,
+.contact-section {
+  padding-inline: 0;
+}
+
+#about .about-layout.container,
+.journey-section .journey-shell.container,
+.contact-section .contact-shell.container {
+  width: var(--content-rail-width);
+  max-width: var(--content-max);
+  margin-inline: auto;
+  box-sizing: border-box;
+}
+
+/* The About and Contact component styles had narrower legacy max-widths. */
+#about .about-layout.container { max-width: var(--content-max); }
+.journey-section .journey-shell.container { max-width: var(--content-max); }
+.contact-section .contact-shell.container { max-width: var(--content-max); }
+
+@media (max-width: 700px) {
+  #about .about-layout.container,
+  .journey-section .journey-shell.container,
+  .contact-section .contact-shell.container {
+    width: calc(100% - 40px);
+  }
+}
