@@ -8,6 +8,7 @@ let project_container = document.getElementById("project-container");
 let menu_btn = document.getElementById("menu-btn");
 let close_btn = document.getElementById("close-btn");
 let menu = document.getElementById("ul");
+let control_close = document.getElementById("control-close");
 
 const braincraft = document.querySelector(".braincraft");
 const internship = document.querySelector(".internship");
@@ -120,45 +121,31 @@ document.addEventListener("click", function (e) {
 
 // --------------------------------------- Anti Inspect / DevTools Detection --------------------------------------
 
-// Disable right-click
-document.addEventListener("contextmenu", e => e.preventDefault());
+// // Disable right-click
+// document.addEventListener("contextmenu", e => e.preventDefault());
 
 // Disable common inspect shortcuts
-document.onkeydown = function (e) {
-    if (
-        e.keyCode === 123 || // F12
-        (e.ctrlKey && e.shiftKey && e.keyCode === 73) || // Ctrl+Shift+I
-        (e.ctrlKey && e.shiftKey && e.keyCode === 74) || // Ctrl+Shift+J
-        (e.ctrlKey && e.keyCode === 85) // Ctrl+U
-    ) {
-        e.preventDefault();
-    }
-};
+// document.onkeydown = function (e) {
+//     if (
+//         e.keyCode === 123 || // F12
+//         (e.ctrlKey && e.shiftKey && e.keyCode === 73) || // Ctrl+Shift+I
+//         (e.ctrlKey && e.shiftKey && e.keyCode === 74) || // Ctrl+Shift+J
+//         (e.ctrlKey && e.keyCode === 85) // Ctrl+U
+//     ) {
+//         e.preventDefault();
+//     }
+// };
 
-// Detect if DevTools are open (for casual users)
-setInterval(function () {
-    const threshold = 160;
-    if (
-        window.outerWidth - window.innerWidth > threshold ||
-        window.outerHeight - window.innerHeight > threshold
-    ) {
-        document.body.innerHTML = "";
-        alert("Developer tools are disabled on this site.");
-        window.location.reload();
-    }
-}, 1000);
+// // Detect if DevTools are open (for casual users)
+// setInterval(function () {
+//     const threshold = 160;
+//     if (
+//         window.outerWidth - window.innerWidth > threshold ||
+//         window.outerHeight - window.innerHeight > threshold
+//     ) {
+//         document.body.innerHTML = "";
+//         alert("Developer tools are disabled on this site.");
+//         window.location.reload();
+//     }
+// }, 1000);
 
-// --------------------------------------------------- Loader ---------------------------------------------------------
-
-window.addEventListener("load", function () {
-    const loader = document.getElementById("loader");
-
-    // Fade-out transition
-    loader.style.transition = "opacity 0.5s ease";
-    loader.style.opacity = "0";
-
-    // Hide after fade completes
-    setTimeout(() => {
-        loader.style.display = "none";
-    }, 500);
-});

@@ -1,7 +1,3 @@
-:root {
-    --border-color: none;
-}
-
 html,
 body {
     margin: 0;
@@ -12,7 +8,12 @@ body {
     font-style: normal;
     background-color: black;
     scroll-behavior: smooth;
+    scrollbar-color: #ffffff #000000;
+    scrollbar-width: thin;
+    scroll-padding: 0;
+
 }
+
 
 *::selection {
     color: rgb(191, 255, 0);
@@ -28,12 +29,13 @@ body {
     height: 2%; */
     border-radius: 50%;
     border-radius: 10px;
-
+    position: relative;
 }
+
 
 header {
     font-family: "Montserrat", sans-serif;
-    background-color: #000000;
+    border: 2px solid #504e4e;
     display: flex;
     flex-wrap: wrap;
     gap: 11%;
@@ -42,14 +44,12 @@ header {
     max-width: 100;
     width: 98%;
     position: fixed;
-    top: 0;
     z-index: 50;
     backdrop-filter: blur(7px);
-    box-shadow: 0px 1px 1px #ffffff8f;
     animation: fadeup 1s;
-    animation-timeline: view(0%, 10%);
-    border-radius: 12px;
-    top: 14px;
+    animation-timeline: view(1%, 10%);
+    border-radius: 10px;
+    top: 8px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -90,15 +90,41 @@ header {
     }
 }
 
-.name-para p>span {
-    font-size: 22px;
+.name-para p span {
+    font-size: 1.4rem;
     margin-left: 7px;
     color: #a177ef;
     font-family: cursive;
+    position: relative;
+}
+
+.name-para p span::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    background: radial-gradient(141.42% 141.42% at 100% 0%, #fff6, #fff0), radial-gradient(140.35% 140.35% at 100% 94.74%, #bd34fe, #bd34fe00), radial-gradient(89.94% 89.94% at 18.42% 15.79%, #41d1ff, #41d1ff00);
+    left: 0;
+    top: 17px;
+    animation: iam 7s infinite;
+}
+
+@keyframes iam {
+    0% {
+        content: " UI/UX Designer";
+    }
+
+    50% {
+        content: " Front-End Developer";
+    }
+
+    100% {
+        content: " FullStack Developer";
+    }
 }
 
 header>.logo {
-    padding: 7px 0;
+    padding: 10px 0;
     font-size: 30px;
     background: radial-gradient(141.42% 141.42% at 100% 0%, #fff6, #fff0), radial-gradient(140.35% 140.35% at 100% 94.74%, #bd34fe, #bd34fe00), radial-gradient(89.94% 89.94% at 18.42% 15.79%, #41d1ff, #41d1ff00);
     color: transparent;
@@ -109,20 +135,20 @@ header>.logo {
     font-style: normal;
 }
 
-nav {
-    display: flex;
-    /* background: #010001; */
-    align-items: center;
-    padding-right: 34px;
-    border-radius: 43px;
-}
-
 nav>ul {
     display: flex;
     list-style: none;
     gap: 60px;
     font-size: 16px;
     flex-wrap: wrap;
+}
+
+nav {
+    display: flex;
+    /* background: #010001; */
+    align-items: center;
+    padding-right: 34px;
+    border-radius: 43px;
 }
 
 nav ul a {
@@ -182,8 +208,8 @@ nav ul a:hover::after {
     height: 35px;
     cursor: pointer;
     transition: none;
-    top: 4px;
-    right: 158px;
+    top: 0;
+    right: 0;
     z-index: 10;
     padding: 1px 5px;
     border-radius: 10%;
@@ -193,8 +219,8 @@ nav ul a:hover::after {
 
 .name-semi {
     /* font-family: "Courier New", Courier, monospace; */
-    width: 33%;
-    animation: fadeleft 1s;
+    /* width: 33%; */
+    animation: fadeleft;
     animation-timeline: view(0%, 10%);
 }
 
@@ -206,56 +232,57 @@ nav ul a:hover::after {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     font-family: "Montserrat", sans-serif;
+    gap: 5%;
 }
 
 .name .hello {
     font-family: "Edu NSW ACT Cursive", cursive;
     font-optical-sizing: auto;
     font-style: normal;
-    font-size: 18px;
-    /* color: rgba(255, 255, 255, 0);
-    background: linear-gradient(45deg, #ffffff, #5f18e3);
-    background-clip: text; */
+    font-size: 1.4rem;
+
 }
 
 .name-para {
-    margin: 26px 0px;
-    font-size: 12px;
-    height: 32px;
-    text-overflow: ellipsis;
+    margin: 18px 0px;
     white-space: nowrap;
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    flex-wrap: wrap;
-    display: flex;
 }
 
 .name-para>p {
     margin: 0;
 }
 
-.name p {
-    font-size: 1.4rem;
+.name-para p {
+    font-size: 24px;
+    line-height: 0;
+}
+
+.name-semi>p {
+    font-size: 2rem;
+    line-height: 0;
+    color: #ffffff00;
+    -webkit-text-stroke: 1px #ffffffcf;
+    font-weight: 900;
+    margin-bottom: 13px;
 }
 
 .name span {
-    font-size: 2.4rem;
-    font-weight: 500;
+    font-size: 4rem;
+    font-weight: 900;
 }
 
 .name img {
     width: 300px;
-    border-radius: 50%;
+    border-radius: 7%;
     animation: faderight 1s;
     animation-timeline: view(30%, 10%);
 }
 
 /* Social Icons */
 .social {
-    margin-top: 2rem;
+    margin-top: 1rem;
     display: flex;
     gap: 15px;
 }
@@ -274,6 +301,11 @@ nav ul a:hover::after {
     /* filter: invert(1); */
     background: radial-gradient(141.42% 141.42% at 100% 0%, #fff6, #fff0), radial-gradient(140.35% 140.35% at 100% 94.74%, #bd34fe, #bd34fe00), radial-gradient(89.94% 89.94% at 18.42% 15.79%, #41d1ff, #41d1ff00);
     box-shadow: 0 1px #ffffffbf inset;
+}
+
+.profile-div {
+    background-color: #ffffff2e;
+    border-radius: 5px;
 }
 
 .blur {
@@ -307,33 +339,10 @@ hr {
 
 .terminal-loader {
     margin: auto;
-    border: 0.1em solid #333;
-    background-color: #1a1a1a;
     color: #0f0;
-    font-family: "Courier New", Courier, monospace;
-    font-size: 1em;
-    padding: 1.5em 1em;
     width: 77%;
-    /* height: 100vh; */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    position: relative;
-    overflow: hidden;
-    box-sizing: border-box;
 }
 
-.terminal-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2.5em;
-    background-color: #333;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    padding: 0 0.4em;
-    box-sizing: border-box;
-}
 
 .terminal-controls {
     float: right;
@@ -351,6 +360,12 @@ hr {
 
 .control.close {
     background-color: #e33;
+
+    &:hover {
+        background-color: red;
+        transform: scale(1.2);
+        cursor: pointer;
+    }
 }
 
 .control.minimize {
@@ -361,17 +376,13 @@ hr {
     background-color: #0b0;
 }
 
-.terminal-title {
-    float: left;
-    line-height: 1.5em;
-    color: #eee;
-    font-size: 25px;
-}
 
 .text {
-    border-right: 0.2em solid green;
+    border-left: 0.2em solid green;
     margin-top: 1.5em;
     font-size: 20px;
+    animation: fadeup;
+    animation-timeline: view(5% -2%);
 }
 
 .about-p strong {
@@ -392,23 +403,7 @@ hr {
     }
 }
 
-.about {
-    /* font-family: "Montserrat", sans-serif;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    transition: all .5s ease-in-out;
-    margin: auto;
-    color: rgb(0, 0, 0);
-    transform: scale(1.05);
-    height: 86vh;
-    background: #b8d3ef;
-    max-width: 80%;
-    padding: 0 7%;
-    border-radius: 12px; */
-    animation: fadeup;
-    animation-timeline: view(66% 0%);
-}
+
 
 @keyframes fadeup {
     from {
@@ -420,19 +415,15 @@ hr {
     }
 }
 
-/* 
-.about::after {
-    content: "";
-    z-index: -1;
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(-45deg, #fb00ff38 0%, #00dade49 100%);
-} */
+.about {
+    width: auto;
+    height: 90vh;
+    align-content: center;
+}
 
-.about p {
-    font-size: 21px;
-    /* padding: 0px 60px; */
-    font-weight: 300;
+.about-p {
+    padding: 0 20px;
+
 }
 
 .about>h1 {
@@ -445,7 +436,7 @@ hr {
 }
 
 .skill-parent {
-    margin-top: 175px;
+    height: 100vh;
     transition: all .5s ease-in-out;
     font-family: "Edu NSW ACT Cursive", cursive;
     font-optical-sizing: auto;
@@ -453,18 +444,18 @@ hr {
 }
 
 .skill-h1 {
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: radial-gradient(141.42% 141.42% at 100% 0%, #fff6, #fff0), radial-gradient(140.35% 140.35% at 100% 94.74%, #bd34fe, #bd34fe00), radial-gradient(89.94% 89.94% at 18.42% 15.79%, #41d1ff, #41d1ff00);
-    ;
     color: transparent;
-    background-clip: text;
+    -webkit-text-stroke: 1px white;
+    padding-left: 12%;
+    font-size: 4rem;
+    font-weight: 900;
+    animation-timeline: view(0%, 10%);
+    animation: skill-anim;
+    animation-timeline: view(91% 0%);
 }
 
 .skills {
-    padding: 99px 10%;
+    padding: 0px 9%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -474,84 +465,79 @@ hr {
 }
 
 .skills img {
-    width: 4%;
-    height: 2%;
-    border: 2px solid white;
-    padding: 20px;
-    background: #000000ba;
-
-    border-radius: 12px;
-    border: 1px solid rgba(38, 38, 38, .7);
-    background: #181818;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 24px;
-    cursor: pointer;
-    opacity: 0;
-    transition: opacity .4s ease;
-    -webkit-user-select: none;
-    user-select: none;
+    width: 10%;
 }
 
 .skills:nth-child(2)> :nth-child(1) {
     filter: drop-shadow(0px 0px 20px #fc490b);
     animation: skill-anim;
-    animation-timeline: view(50% 0%);
+    animation-timeline: view(90% 0%);
 }
 
 .skills:nth-child(2)> :nth-child(2) {
     filter: drop-shadow(0px 0px 20px #2196f3);
     animation: skill-anim;
-    animation-timeline: view(50% 0%);
+    animation-timeline: view(90% 0%);
 }
 
 .skills:nth-child(2)> :nth-child(3) {
     filter: drop-shadow(0px 0px 20px #ffdf00);
     animation: skill-anim;
-    animation-timeline: view(50% 0%);
+    animation-timeline: view(90% 0%);
 }
 
 .skills:nth-child(2)> :nth-child(4) {
     filter: drop-shadow(0px 0px 20px #69cee9);
     animation: skill-anim;
-    animation-timeline: view(50% 0%);
+    animation-timeline: view(90% 0%);
 }
 
 .skills:nth-child(2)> :nth-child(5) {
     filter: drop-shadow(0px 0px 20px #6e74cf);
     animation: skill-anim;
-    animation-timeline: view(50% 0%);
+    animation-timeline: view(90% 0%);
 }
 
 .skills:nth-child(2)> :nth-child(6) {
     filter: drop-shadow(0px 0px 20px white);
     animation: skill-anim;
-    animation-timeline: view(50% 0%);
+    animation-timeline: view(90% 0%);
 }
 
 .skills:nth-child(2)> :nth-child(7) {
-    filter: drop-shadow(0px 0px 20px #d3360e);
+    filter: drop-shadow(0px 0px 20px #d3360e) drop-shadow(0px 0px 10px #ff9900);
     animation: skill-anim;
-    animation-timeline: view(50% 0%);
+    animation-timeline: view(90% 0%);
 }
 
 .skills:nth-child(2)> :nth-child(8) {
     filter: drop-shadow(0px 0px 20px white);
     animation: skill-anim;
-    animation-timeline: view(50% 0%);
+    animation-timeline: view(90% 0%);
 }
 
 .skills:nth-child(2)> :nth-child(9) {
-    filter: drop-shadow(0px 0px 20px #f9ab02);
+    filter: drop-shadow(0px 0px 20px #02f9dc);
     animation: skill-anim;
-    animation-timeline: view(50% 0%);
+    animation-timeline: view(91% 0%);
 }
 
 .skills:nth-child(2)> :nth-child(10) {
-    filter: drop-shadow(0px 0px 20px #02f9dc);
+    filter: drop-shadow(0px 0px 10px #ff0000) drop-shadow(0px 0px 20px #ff0000);
     animation: skill-anim;
-    animation-timeline: view(50% 0%);
+    animation-timeline: view(91% 0%);
+}
+
+.skills:nth-child(2)> :nth-child(11) {
+    filter: drop-shadow(0px 0px 10px #0322e7) drop-shadow(0px 0px 20px #04b8ea40);
+    animation: skill-anim;
+    animation-timeline: view(91% 0%);
+}
+
+.skills:nth-child(2)> :nth-child(12) {
+    filter: drop-shadow(0px 0px 10px #f2efef) drop-shadow(0px 0px 20px #fcfcfc);
+    animation: skill-anim;
+    animation-timeline: view(91% 0%);
 }
 
 @keyframes skill-anim {
@@ -567,14 +553,45 @@ hr {
 }
 
 .marquee-container {
-    width: 100%;
     overflow: hidden;
     white-space: nowrap;
-    box-sizing: border-box;
     border-bottom: 4px solid black;
-    padding: 10px;
     transform: rotate(-2deg);
     background: #eaff05b6;
+    padding: 10px 0px;
+    margin: 1px;
+    /* border-bottom: 3px solid white; */
+    background: linear-gradient(40deg, #00000000, #ff00004d, red, #ff000042, #00000000);
+}
+
+.marquee-container2 {
+    overflow: hidden;
+    white-space: nowrap;
+    border-bottom: 4px solid black;
+    transform: rotate(360deg);
+    background: #05ffe8b6;
+    position: relative;
+    top: 17px;
+    z-index: 33;
+    padding: 10px 0px;
+    /* border-bottom: 3px solid white; */
+    background: linear-gradient(40deg, #00000000, #5600ff45, #5600ff, #5600ff45, #00000000);
+}
+
+.marquee-container3 {
+    overflow: hidden;
+    white-space: nowrap;
+    border-bottom: 4px solid black;
+    transform: rotate(358deg);
+    background: #e605ffb6;
+    color: white;
+    position: relative;
+    top: 37px;
+    z-index: 33;
+    padding: 9px 0px;
+    margin: 1px;
+    /* border-bottom: 3px solid white; */
+    background: linear-gradient(40deg, #00000000, #ff00004d, red, #ff000042, #00000000);
 }
 
 .marquee-text {
@@ -583,22 +600,9 @@ hr {
     padding-left: 100%;
     animation: marquee 30s linear infinite;
     font-size: 24px;
-    color: #333;
+    color: #000000;
 }
 
-.marquee-container2 {
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    box-sizing: border-box;
-    border-bottom: 4px solid black;
-    padding: 10px;
-    transform: rotate(360deg);
-    background: #05ffe8b6;
-    position: relative;
-    top: 17px;
-    z-index: 33;
-}
 
 .marquee-text2 {
     font-family: cursive;
@@ -606,22 +610,7 @@ hr {
     padding-left: 100%;
     animation: marquee 30s linear 7s infinite;
     font-size: 24px;
-    color: #333;
-}
-
-.marquee-container3 {
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    box-sizing: border-box;
-    border-bottom: 4px solid black;
-    padding: 10px;
-    transform: rotate(358deg);
-    background: #e605ffb6;
-    /* color: white; */
-    position: relative;
-    top: 37px;
-    z-index: 33;
+    color: #000000;
 }
 
 .marquee-text3 {
@@ -630,7 +619,7 @@ hr {
     padding-left: 100%;
     animation: marquee 30s linear 10s infinite;
     font-size: 24px;
-    color: #ffffff;
+    color: #000000;
 }
 
 @keyframes marquee {
@@ -657,8 +646,9 @@ button {
     color: white;
     border-radius: 7px;
     border: none;
-    margin-top: 14px;
     transition: all .5s ease;
+    margin-top: 1rem;
+    cursor: pointer;
 
     &:hover {
         background-color: #ffffff97;
@@ -687,14 +677,17 @@ button {
     animation-timeline: view(40% 0%);
 }
 
-.colorpalet1 {
-    /* background: linear-gradient(150deg, #9bc4de, #ffffd5); */
-    background-color: rgb(60, 254, 0);
-    color: black;
+.colorpalet1,
+.colorpalet2,
+.colorpalet3 {
+    /* background-color: rgb(60, 254, 0);
+    color: black; */
+    background-color: rgb(80 76 76 / 52%);
+    color: #ffffff;
 }
 
+/* 
 .colorpalet2 {
-    /* background: linear-gradient(150deg, #04ff00, #d372d7); */
     background-color: #d372d7;
     color: rgb(255, 255, 255);
 }
@@ -702,7 +695,7 @@ button {
 .colorpalet3 {
     background: #9f00ff;
     color: #000000;
-}
+} */
 
 #Internship_more,
 #BrainCraft_more,
@@ -722,54 +715,33 @@ button {
     transition: all .3s linear;
 
     &:hover {
-        background: red;
+        background: radial-gradient(141.42% 141.42% at 100% 0%, #fff6, #fff0), radial-gradient(140.35% 140.35% at 100% 94.74%, #bd34fe, #bd34fe00), radial-gradient(89.94% 89.94% at 18.42% 15.79%, #41d1ff, #41d1ff00);
         color: white;
     }
 }
 
-/* 
-.internship img,
-.braincraft img {
-    width: 500px;
-    border-radius: calc(40px - 20px);
-    border: 2px solid var(--border-color);
-} */
-
-/* .braincraft :nth-child(2) {
-    flex-wrap: wrap;
-} */
-
 .openlinks {
     position: relative;
-    /* top: 30px; */
     text-decoration: none;
     color: #ffffff;
     font-size: 18px;
     font-weight: 400;
     margin-right: 35px;
+    background: linear-gradient(149deg, #6195d0, #8782d4, #9a23dc);
+    padding: 5px 15px;
+    border-top-left-radius: 1px solid #d3c7c7;
+    border-radius: 10px;
+    border: 1px solid #d3c7c7;
 
     &:hover {
         background: radial-gradient(141.42% 141.42% at 100% 0%, #fff6, #fff0), radial-gradient(140.35% 140.35% at 100% 94.74%, #bd34fe, #bd34fe00), radial-gradient(89.94% 89.94% at 18.42% 15.79%, #41d1ff, #41d1ff00);
         background-clip: text;
         color: transparent;
+        border: none;
     }
 
 }
 
-.openlinks::after {
-    content: "";
-    position: absolute;
-    width: 20%;
-    height: 2.5px;
-    background: radial-gradient(141.42% 141.42% at 100% 0%, #fff6, #fff0), radial-gradient(140.35% 140.35% at 100% 94.74%, #bd34fe, #bd34fe00), radial-gradient(89.94% 89.94% at 18.42% 15.79%, #41d1ff, #41d1ff00);
-    left: 0;
-    bottom: -5px;
-    transition: width 0.3s ease;
-}
-
-.openlinks:hover::after {
-    width: 100%;
-}
 
 .contect {
     margin-top: 68px;
@@ -783,22 +755,8 @@ button {
     animation-timeline: view(95% 0%);
 }
 
-.contact-semi {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-}
-
-.contact-semi>h1 {
+.contect>h1 {
     font-family: "Edu NSW ACT Cursive", cursive;
-    font-optical-sizing: auto;
-    font-style: normal;
-    background: radial-gradient(141.42% 141.42% at 100% 0%, #fff6, #fff0), radial-gradient(140.35% 140.35% at 100% 94.74%, #bd34fe, #bd34fe00), radial-gradient(89.94% 89.94% at 18.42% 15.79%, #41d1ff, #41d1ff00);
-    background-clip: text;
-    color: transparent;
-    border-radius: 4px;
 }
 
 .contact-semi p {
@@ -875,8 +833,11 @@ button {
 }
 
 .contact-info {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    background: #000aff;
+    color: white;
+    margin-top: 1rem;
+    /* margin-bottom: 2rem; */
+    width: -webkit-fill-available;
 }
 
 .email-link,
@@ -905,41 +866,17 @@ button {
 }
 
 /* ================================================== loader ===================================================== */
-.spinner {
-    background-image: linear-gradient(rgb(186, 66, 255) 35%, rgb(0, 225, 255));
-    width: 100px;
-    height: 100px;
-    animation: spinning82341 1.7s linear infinite;
-    text-align: center;
-    border-radius: 50px;
-    filter: blur(1px);
-    box-shadow: 0px -5px 20px 0px rgb(186, 66, 255), 0px 5px 20px 0px rgb(0, 225, 255);
-}
-
-.spinner1 {
-    background-color: rgb(36, 36, 36);
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
-    filter: blur(10px);
-}
-
-@keyframes spinning82341 {
-    to {
-        transform: rotate(360deg);
-    }
-}
 
 @media only screen and (max-width: 768px) {
 
     .skills img {
-        width: 10%;
+        width: 14%;
     }
 
     header {
         justify-content: space-around;
         gap: 62%;
-        width: 100%;
+        width: 94%;
     }
 
     nav {
@@ -1020,7 +957,7 @@ button {
 
     .name {
         justify-content: space-around;
-        gap: 6%;
+        gap: 0%;
     }
 
     .social {
@@ -1042,20 +979,7 @@ button {
         width: 84%;
         margin: auto;
         padding: 10px 17px;
-        animation: cards;
         animation-timeline: view(70% 0%);
-    }
-
-    @keyframes cards {
-        from {
-            transform: rotateZ(45deg);
-            opacity: 0;
-        }
-
-        to {
-            transform: rotateZ(0);
-            opacity: 1;
-        }
     }
 
     .terminal-loader {
@@ -1067,8 +991,7 @@ button {
 @media (max-width: 450px) {
 
     .skills img {
-        width: 20%;
-        padding: 5%;
+        width: 29%;
     }
 
     header {
