@@ -1,0 +1,13 @@
+.technology-logo-grid{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(88px,1fr));gap:12px;padding:0;margin:28px 0 0;max-width:660px}
+.technology-logo-item{min-width:0}
+.technology-logo-tile{position:relative;display:flex;align-items:center;justify-content:center;min-height:96px;border:1px solid #ffffff1c;border-radius:16px;background:linear-gradient(145deg,#ffffff08,#ffffff02);outline:none;transition:transform .22s ease,border-color .22s ease,background .22s ease;cursor:default}
+.technology-logo-tile img{display:block;width:42px;height:42px;object-fit:contain;filter:brightness(1);transition:transform .22s ease;}
+.technology-logo-tile img[src*="express/"] ,.technology-logo-tile img[src*="socketio/"]{filter:invert(1)}
+.technology-logo-fallback{font:700 18px var(--font-mono);color:var(--technology-tint,var(--lime));}
+.technology-logo-name{position:absolute;left:50%;bottom:calc(100% + 8px);z-index:5;transform:translate(-50%,4px);padding:7px 10px;border:1px solid #ffffff26;border-radius:7px;background:#151515;color:#f5f5f0;font:10px var(--font-mono);white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .18s ease,transform .18s ease;}
+.technology-logo-tile:hover,.technology-logo-tile:focus-visible{transform:translateY(-3px);border-color:#efff3670;background:#efff3609}
+.technology-logo-tile:hover img,.technology-logo-tile:focus-visible img{transform:scale(1.08)}
+.technology-logo-tile:hover .technology-logo-name,.technology-logo-tile:focus-visible .technology-logo-name{opacity:1;transform:translate(-50%,0)}
+.technology-logo-tile:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
+@media(max-width:700px){.technology-logo-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.technology-logo-tile{min-height:88px}.technology-logo-name{position:static;transform:none;opacity:1;display:block;text-align:center;margin-top:9px;padding:0;border:0;background:transparent;white-space:normal;font-size:var(--text-2xs);color:#aaa}.technology-logo-tile{flex-direction:column;gap:0;padding:12px 4px}.technology-logo-tile:hover .technology-logo-name,.technology-logo-tile:focus-visible .technology-logo-name{transform:none}}
+@media(prefers-reduced-motion:reduce){.technology-logo-tile,.technology-logo-tile img,.technology-logo-name{transition:none}}

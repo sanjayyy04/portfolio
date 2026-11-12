@@ -1,0 +1,41 @@
+*,
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+/* Keep the native pointer consistently matched to the shared swarm glyph.
+   The SVG mirrors drawCursor()'s compact angular arrow: cyan outline, blue fill. */
+:root,
+body,
+body * {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='22' viewBox='0 0 20 22'%3E%3Cpath d='M2 2 L17 8.5 L9.5 10 L7 19 Z' fill='%2367f5ee' fill-opacity='.96' stroke='%235b7cff' stroke-width='1.15' stroke-linejoin='round'/%3E%3Cpath d='M2 2 L9.5 10 L7 19 Z' fill='%235b7cff' fill-opacity='.82'/%3E%3C/svg%3E") 2 2, auto !important;
+}
+
+/* Keep text-editing affordances usable while retaining the custom arrow elsewhere. */
+input,
+textarea,
+[contenteditable="true"],
+.project-detail-page input,
+.project-detail-page textarea {
+  cursor: text !important;
+}
+
+@media (pointer: coarse) {
+  /* Touch devices have no persistent system pointer to customize. */
+  :root,
+  body,
+  body * {
+    cursor: auto !important;
+  }
+}
+
+/* The custom interactive page scrollbar replaces the browser's plain outer scrollbar. */
+html{scrollbar-width:none}
+html::-webkit-scrollbar{display:none;width:0;height:0}
+
+/* Keyboard users can bypass repeated navigation and reach the primary content. */
+.skip-link{position:fixed;left:12px;top:12px;z-index:10000;transform:translateY(-160%);padding:12px 16px;background:#efff36;color:#050505;font:600 14px var(--font-display);border-radius:4px}
+.skip-link:focus{transform:translateY(0);outline:3px solid #fff;outline-offset:3px}
+:focus-visible{outline:2px solid #efff36;outline-offset:4px}

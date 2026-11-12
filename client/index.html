@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#08090d" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" /></noscript>
+    <style>
+      #portfolio-loader{position:fixed;inset:0;z-index:2147483000;display:grid;place-items:center;background:#08090d;color:#f4f4ef;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;opacity:1;visibility:visible;transition:opacity .35s ease,visibility .35s ease}
+      #portfolio-loader.is-hidden{opacity:0;visibility:hidden;pointer-events:none}
+      #portfolio-loader .loader-inner{width:min(280px,calc(100vw - 48px));display:grid;gap:22px}
+      #portfolio-loader .loader-brand{display:flex;align-items:center;justify-content:space-between;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#b7bbb4}
+      #portfolio-loader .loader-brand strong{font-weight:600;color:#efff36}
+      #portfolio-loader .loader-mark{height:2px;background:#262a25;overflow:hidden;position:relative}
+      #portfolio-loader .loader-mark:after{content:"";position:absolute;inset:0 auto 0 -40%;width:40%;background:#efff36;animation:portfolio-load-sweep 1.15s ease-in-out infinite}
+      #portfolio-loader .loader-status{font-size:9px;letter-spacing:.14em;color:#777e75;text-transform:uppercase;display:flex;justify-content:space-between;gap:12px}
+      #portfolio-loader .loader-pulse{width:6px;height:6px;background:#efff36;border-radius:50%;box-shadow:0 0 12px #efff3666;display:inline-block;margin-right:8px}
+      @keyframes portfolio-load-sweep{0%{transform:translateX(0)}100%{transform:translateX(350%)}}
+      @media(prefers-reduced-motion:reduce){#portfolio-loader .loader-mark:after{animation:none;width:100%;left:0}#portfolio-loader{transition:none}}
+    </style>
+    <meta name="description" content="Sanjay Chauhan is a MERN Stack Developer building responsive web applications, real-time products, and AI-powered tools with React, Node.js, Express, and MongoDB." />
+    <meta property="og:title" content="Sanjay Chauhan — MERN Stack Developer" />
+    <meta property="og:description" content="Explore Sanjay Chauhan’s full-stack projects, real-time chat application, AI Website Analyzer, and development journey." />
+    <meta property="og:type" content="website" />
+    <title>Sanjay Chauhan | MERN Stack Developer</title>
+  </head>
+  <body>
+    <div id="portfolio-loader" role="status" aria-live="polite" aria-label="Loading portfolio">
+      <div class="loader-inner">
+        <div class="loader-brand"><strong>SC / PORTFOLIO</strong><span>INITIALIZING</span></div>
+        <div class="loader-mark" aria-hidden="true"></div>
+        <div class="loader-status"><span><i class="loader-pulse"></i>Preparing cursor swarm</span><span>PLEASE WAIT</span></div>
+      </div>
+    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
