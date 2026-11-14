@@ -1,4 +1,7 @@
+import { useEffect, useState } from 'react';
+import useEmblaCarousel from 'embla-carousel-react';
 import './projectsPage.css';
+import { sitePath } from '../sitePath.js';
 
 const projects = [
   {
@@ -28,10 +31,50 @@ const projects = [
 ];
 
 export default function ProjectsPage() {
+  const [sliderRef, emblaApi] = useEmblaCarousel({
+    align: 'start',
+    containScroll: 'trimSnaps',
+  });
+  const [sliderPosition, setSliderPosition] = useState({
+    index: 0,
+    total: 1,
+    canScrollPrev: false,
+    canScrollNext: false,
+  });
+
+  useEffect(() => {
+    if (!emblaApi) return undefined;
+    const updatePosition = () => {
+      setSliderPosition({
+        index: emblaApi.selectedScrollSnap(),
+        total: emblaApi.scrollSnapList().length,
+        canScrollPrev: emblaApi.canScrollPrev(),
+        canScrollNext: emblaApi.canScrollNext(),
+      });
+    };
+    updatePosition();
+    emblaApi.on('select', updatePosition);
+    emblaApi.on('reInit', updatePosition);
+    return () => {
+      emblaApi.off('select', updatePosition);
+      emblaApi.off('reInit', updatePosition);
+    };
+  }, [emblaApi]);
+
+  const handleSliderKeyDown = (event) => {
+    if (event.key === 'ArrowLeft') {
+      event.preventDefault();
+      emblaApi?.scrollPrev();
+    } else if (event.key === 'ArrowRight') {
+      event.preventDefault();
+      emblaApi?.scrollNext();
+    }
+  };
+
   return <main id="main-content" className="project-detail-page projects-index-page">
     <header className="detail-nav projects-index-nav" data-projects-target>
-      <a href="/#projects">← BACK TO HOME</a>
-      <span>PROJECT ARCHIVE / 04 BUILDS</span>
+      <span className="projects-index-route"><i /> PROJECT ARCHIVE <b>/</b> 04 BUILDS</span>
+      <a className="projects-index-crumb projects-index-crumb-forward" href={sitePath('contact')}>LET’S TALK <span aria-hidden="true">↗</span></a>
     </header>
     <section className="projects-index-hero container" data-projects-target>
       <p className="detail-eyebrow"><i /> PROJECT ARCHIVE / SELECTED BUILDS</p>
@@ -39,10 +82,19 @@ export default function ProjectsPage() {
       <p className="projects-index-lede">A closer look at the applications, experiments, and tools I’ve built. Open a case study for the feature breakdown and workflow, or jump straight into a live build or its source when available.</p>
       <div className="projects-index-stats"><span><b>04</b> PROJECTS</span><span><b>01</b> FULL-STACK CHAT</span><span><b>03</b> LIVE DEMOS</span></div>
     </section>
-    <section className="projects-index-grid container" aria-label="All projects">
-      {projects.map((project) => <article className={`projects-index-card ${project.accent}`} key={project.slug} data-projects-target>
+    <div className="projects-slider-toolbar container">
+      <p>DRAG OR SWIPE TO EXPLORE</p>
+      <div className="projects-slider-controls" aria-label="Project slider controls">
+        <span aria-live="polite" aria-atomic="true">{String(sliderPosition.index + 1).padStart(2, '0')} <i>/</i> {String(sliderPosition.total).padStart(2, '0')}</span>
+        <button className="projects-index-crumb projects-index-crumb-forward projects-slider-button" type="button" onClick={() => emblaApi?.scrollPrev()} disabled={!sliderPosition.canScrollPrev} aria-label="Previous projects">←</button>
+        <button className="projects-index-crumb projects-index-crumb-forward projects-slider-button" type="button" onClick={() => emblaApi?.scrollNext()} disabled={!sliderPosition.canScrollNext} aria-label="Next projects">→</button>
+      </div>
+    </div>
+    <section className="projects-index-grid container" ref={sliderRef} onKeyDown={handleSliderKeyDown} role="region" aria-roledescription="carousel" aria-label="Project archive" tabIndex={0}>
+      <div className="projects-slider-track">
+      {projects.map((project, index) => <article className={`projects-index-card ${project.accent}`} key={project.slug} data-projects-target role="group" aria-roledescription="slide" aria-label={`${index + 1} of ${projects.length}: ${project.name}`}>
         <div className="projects-index-card-top"><span>{project.no} / SELECTED BUILD</span><span className="projects-index-signal"><i /> {project.signal}</span></div>
-        <a className="projects-index-card-title" href={`/project/${project.slug}`} aria-label={`Open ${project.name} case study`}>
+        <a className="projects-index-card-title" href={sitePath(`project/${project.slug}`)} aria-label={`Open ${project.name} case study`}>
           <span className="projects-index-type">{project.type}</span>
           <h2>{project.name}</h2>
           <span className="projects-index-arrow">↗</span>
@@ -50,13 +102,14 @@ export default function ProjectsPage() {
         <p className="projects-index-description">{project.description}</p>
         <div className="projects-index-tags">{project.stack.map((item) => <span key={item}>{item}</span>)}</div>
         <div className="projects-index-actions">
-          <a href={`/project/${project.slug}`}>CASE STUDY <span>↗</span></a>
+          <a href={sitePath(`project/${project.slug}`)}>CASE STUDY <span>↗</span></a>
           {project.liveUrl ? <a href={project.liveUrl} target="_blank" rel="noreferrer">LIVE DEMO <span>↗</span></a> : <span className="projects-index-unavailable">LIVE DEMO NOT PROVIDED</span>}
           {project.repoUrl && <a href={project.repoUrl} target="_blank" rel="noreferrer">SOURCE CODE <span>↗</span></a>}
         </div>
       </article>)}
+      </div>
     </section>
-    <section className="projects-index-end container" data-projects-target><p className="detail-label">NEXT / COLLABORATION</p><h2>Have a good<br/><em>problem to solve?</em></h2><a href="/#contact">GET IN TOUCH ↗</a></section>
-    <footer className="detail-footer"><a href="/#projects">← HOME / SELECTED WORK</a><a href="#top" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>BACK TO TOP ↑</a></footer>
+    <section className="projects-index-end container" data-projects-target><p className="detail-label">NEXT / COLLABORATION</p><h2>Have a good<br/><em>problem to solve?</em></h2><a href={sitePath('#contact')}>GET IN TOUCH ↗</a></section>
+    <footer className="detail-footer projects-index-footer"><a className="projects-index-crumb projects-index-crumb-back" href={sitePath('#projects')}>← HOME / SELECTED WORK</a><a className="projects-index-crumb projects-index-crumb-forward" href="#top" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>BACK TO TOP <span aria-hidden="true">↑</span></a></footer>
   </main>;
 }

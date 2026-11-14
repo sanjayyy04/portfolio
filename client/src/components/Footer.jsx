@@ -1,4 +1,5 @@
 import './footer.css';
+import { sitePath } from '../sitePath.js';
 
 const LINKEDIN_URL = 'https://www.linkedin.com/in/sanjay-chauhan-537517375/';
 const GITHUB_URL = 'https://github.com/sanjayyy04';
@@ -29,7 +30,7 @@ export default function Footer() {
           <a href={GITHUB_URL} target="_blank" rel="noreferrer">GITHUB ↗</a>
           <a href={LINKEDIN_URL} target="_blank" rel="noreferrer">LINKEDIN ↗</a>
           <a href={`mailto:${CONTACT_EMAIL}`}>EMAIL ↗</a>
-          <a href="/Sanjay-Chauhan-Resume.pdf" target="_blank" rel="noreferrer">RESUME ↗</a>
+          <a href={sitePath('Sanjay-Chauhan-Resume.pdf')} target="_blank" rel="noreferrer">RESUME ↗</a>
           <button type="button" onClick={top}>BACK TO TOP ↑</button>
         </nav>
         <span>© {new Date().getFullYear()}</span>

@@ -1,16 +1,209 @@
-.contact-index-page{--lime:#efff36;padding-left:clamp(22px,6vw,92px);padding-right:clamp(22px,6vw,92px)}
-.contact-index-nav{gap:18px}
-.contact-index-nav>a:last-child{color:var(--lime)}
-.contact-index-intro{padding:clamp(68px,10vh,120px) 0 54px;border-bottom:1px solid #ffffff20}
-.contact-index-intro h1{font-size:clamp(52px,10vw,132px);line-height:.87;letter-spacing:-.085em;margin:30px 0 24px;font-weight:600}
-.contact-index-intro h1 span{color:var(--lime)}
-.contact-index-intro>p:last-child{max-width:650px;color:#a6a6a2;font-size:clamp(15px,1.7vw,20px);line-height:1.75;margin:0}
-.contact-index-page .contact-section{margin:0 -1px;padding-left:0;padding-right:0;border-top:0}
-.contact-index-page .contact-shell{max-width:none;column-gap:clamp(36px,7vw,100px)}
-.contact-index-footer{margin-top:0}
-.contact-index-page [data-contact-page-target].detail-swarm-pending{opacity:0!important;visibility:hidden;transition:opacity .24s ease,visibility 0s linear .24s}
-.contact-index-page [data-contact-page-target].detail-swarm-drawn{opacity:1!important;visibility:visible;transition:opacity .28s ease,visibility 0s}
-.contact-index-page [data-contact-target].detail-swarm-pending{opacity:0!important;visibility:hidden;transition:opacity .24s ease,visibility 0s linear .24s}
-.contact-index-page [data-contact-target].detail-swarm-drawn{opacity:1!important;visibility:visible;transition:opacity .28s ease,visibility 0s}
-@media(max-width:700px){.contact-index-nav{font-size:8px;letter-spacing:.08em}.contact-index-intro{padding-top:72px}.contact-index-page .contact-section{padding-top:58px}.contact-index-page .contact-shell{row-gap:40px}}
-@media(prefers-reduced-motion:reduce){.contact-index-page [data-contact-page-target].detail-swarm-pending,.contact-index-page [data-contact-target].detail-swarm-pending{opacity:1!important;visibility:visible;transition:none}}
+.contact-index-page {
+    --lime: #efff36;
+    padding-left: clamp(22px, 6vw, 92px);
+    padding-right: clamp(22px, 6vw, 92px)
+}
+
+.contact-index-nav {
+    padding-top: 8vh;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact-index-crumb {
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 14px;
+    border: 1px solid #ffffff25;
+    border-radius: 3px;
+    background: linear-gradient(110deg, #ffffff0a, #ffffff03);
+    color: #e8e9df !important;
+    text-decoration: none;
+    font: 500 9px/1 var(--font-mono);
+    letter-spacing: .11em;
+    white-space: nowrap;
+    transition: background .2s, border-color .2s, color .2s, transform .2s
+}
+
+.contact-index-crumb-back {
+    border-color: #efff3650
+}
+
+.contact-index-crumb-back:first-letter {
+    color: var(--lime)
+}
+
+.contact-index-crumb-forward {
+    border-color: #efff3680;
+    color: var(--lime) !important
+}
+
+.contact-index-crumb-forward span {
+    font-size: 15px;
+    line-height: 0;
+    transition: transform .2s
+}
+
+.contact-index-crumb:hover {
+    transform: translateY(-2px);
+    border-color: var(--lime);
+    background: #efff3610;
+    color: var(--lime) !important
+}
+
+.contact-index-crumb-forward:hover span {
+    transform: translate(2px, -2px)
+}
+
+.contact-index-crumb:focus-visible {
+    outline: 2px solid var(--lime);
+    outline-offset: 3px
+}
+
+.contact-index-route {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: #b8bbb3;
+    font: 500 9px/1 var(--font-mono);
+    letter-spacing: .16em;
+    white-space: nowrap
+}
+
+.contact-index-route i {
+    width: 6px;
+    height: 6px;
+    background: var(--lime);
+    box-shadow: 0 0 10px #efff3680;
+    transform: rotate(45deg)
+}
+
+.contact-index-route b {
+    color: #666b62;
+    font-weight: 400
+}
+
+.contact-index-intro {
+    padding: clamp(68px, 10vh, 120px) 0 54px;
+    border-bottom: 1px solid #ffffff20
+}
+
+.contact-index-intro h1 {
+    font-size: clamp(52px, 10vw, 132px);
+    line-height: .87;
+    letter-spacing: -.085em;
+    margin: 30px 0 24px;
+    font-weight: 600
+}
+
+.contact-index-intro h1 span {
+    color: var(--lime)
+}
+
+.contact-index-intro>p:last-child {
+    max-width: 650px;
+    color: #a6a6a2;
+    font-size: clamp(15px, 1.7vw, 20px);
+    line-height: 1.75;
+    margin: 0
+}
+
+.contact-index-page .contact-section {
+    margin: 0 -1px;
+    padding-left: 0;
+    padding-right: 0;
+    border-top: 0
+}
+
+.contact-index-page .contact-shell {
+    max-width: none;
+    column-gap: clamp(36px, 7vw, 100px)
+}
+
+.contact-index-footer {
+    margin-top: 0;
+    padding: 20px 0;
+    border-top-color: #efff3630;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact-index-page [data-contact-page-target].detail-swarm-pending {
+    opacity: 0 !important;
+    visibility: hidden;
+    transition: opacity .24s ease, visibility 0s linear .24s
+}
+
+.contact-index-page [data-contact-page-target].detail-swarm-drawn {
+    opacity: 1 !important;
+    visibility: visible;
+    transition: opacity .28s ease, visibility 0s
+}
+
+.contact-index-page [data-contact-target].detail-swarm-pending {
+    opacity: 0 !important;
+    visibility: hidden;
+    transition: opacity .24s ease, visibility 0s linear .24s
+}
+
+.contact-index-page [data-contact-target].detail-swarm-drawn {
+    opacity: 1 !important;
+    visibility: visible;
+    transition: opacity .28s ease, visibility 0s
+}
+
+@media(max-width:700px) {
+    .contact-index-route {
+        grid-column: 1/-1;
+        grid-row: 1;
+        justify-self: center;
+        letter-spacing: .12em
+    }
+
+    .contact-index-crumb {
+        min-height: 38px;
+        padding: 0 9px;
+        font-size: 8px;
+        letter-spacing: .06em
+    }
+
+    .contact-index-crumb-forward {
+        justify-self: end
+    }
+
+    .contact-index-footer {
+        gap: 10px
+    }
+
+    .contact-index-footer .contact-index-crumb {
+        white-space: normal;
+        text-align: center
+    }
+
+    .contact-index-intro {
+        padding-top: 72px
+    }
+
+    .contact-index-page .contact-section {
+        padding-top: 58px
+    }
+
+    .contact-index-page .contact-shell {
+        row-gap: 40px
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+
+    .contact-index-page [data-contact-page-target].detail-swarm-pending,
+    .contact-index-page [data-contact-target].detail-swarm-pending {
+        opacity: 1 !important;
+        visibility: visible;
+        transition: none
+    }
+}

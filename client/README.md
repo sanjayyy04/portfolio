@@ -25,6 +25,8 @@ npm run build --workspace client
 npm run preview --workspace client
 ```
 
+The GitHub Pages workflow builds this repository site with the `/portfolio/` base path. The build also publishes a `404.html` fallback so client-side pages such as `/projects`, `/contact`, and `/project/<slug>` continue to work when opened directly or refreshed.
+
 ## Sections
 
 - **Hero:** portfolio introduction and visual orbital motif.

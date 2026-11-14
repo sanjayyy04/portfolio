@@ -30,7 +30,6 @@ export default function TechnologyLogos({ technologies = [] }) {
                   alt=""
                   loading="lazy"
                   decoding="async"
-                  style={{ '--technology-tint': icon.tint, '--technology-invert': icon.invert ? '1' : '0' }}
                   onError={(event) => { event.currentTarget.hidden = true; event.currentTarget.nextElementSibling.hidden = false; }}
                 />
               ) : null}
