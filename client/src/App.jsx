@@ -9,6 +9,7 @@ import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
 import SwarmEngine from './components/SwarmEngine.jsx';
 import ScrollProgress from './components/ScrollProgress.jsx';
+import { siteRoutePath } from './sitePath.js';
 
 // Route-specific pages are split into separate chunks so the homepage does not
 // download their markup and styles before a visitor opens those routes.
@@ -20,11 +21,12 @@ import './App.css';
 import './layout.css';
 
 export default function App() {
-  const match = window.location.pathname.match(/^\/project\/([^/]+)\/?$/);
-  if (/^\/projects\/?$/.test(window.location.pathname)) {
+  const pathname = siteRoutePath();
+  const match = pathname.match(/^\/project\/([^/]+)\/?$/);
+  if (/^\/projects\/?$/.test(pathname)) {
     return <><a className="skip-link" href="#main-content">Skip to main content</a><SwarmEngine /><Suspense fallback={<RouteFallback />}><ProjectsPage /></Suspense><ScrollProgress /></>;
   }
-  if (/^\/contact\/?$/.test(window.location.pathname)) {
+  if (/^\/contact\/?$/.test(pathname)) {
     return <><a className="skip-link" href="#main-content">Skip to main content</a><SwarmEngine /><Suspense fallback={<RouteFallback />}><ContactPage /></Suspense><ScrollProgress /></>;
   }
   if (match) {

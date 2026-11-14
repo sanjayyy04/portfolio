@@ -1,3 +1,5 @@
+import { sitePath } from '../sitePath.js';
+
 const skillGroups = [
   { name: 'React.js', mark: '⚛', kind: 'react', level: 'UI / COMPONENTS' },
   { name: 'TypeScript', mark: 'TS', kind: 'ts', level: 'TYPED JAVASCRIPT' },
@@ -47,17 +49,19 @@ export default function Skills() {
             <h2 id="skills-title" className="skills-title"><span>SKILLS</span><br />I WORK WITH</h2>
             <p className="skills-summary">A practical toolkit for building, shipping, and improving digital products — from polished interfaces to real-time apps and deployment workflows.</p>
           </div>
-          <div className="skills-note">
-            <span className="skills-note-dot" />
-            <div>
-              <p className="skills-note-label">CONTINUOUSLY EXPLORING</p>
-              <p>Frontend to backend, cloud to automation, and AI integration — I enjoy connecting the pieces that turn an idea into a working product.</p>
+          <div className="skills-intro-aside">
+            <div className="skills-note">
+              <span className="skills-note-dot" />
+              <div>
+                <p className="skills-note-label">CONTINUOUSLY EXPLORING</p>
+                <p>Frontend to backend, cloud to automation, and AI integration — I enjoy connecting the pieces that turn an idea into a working product.</p>
+              </div>
             </div>
+            <a className="skills-opportunity" href={sitePath('#contact')} aria-label="Contact Sanjay about opportunities">
+              <span className="skills-opportunity-icon">↗</span>
+              <span><strong>[ OPEN TO OPPORTUNITIES ]</strong><small>Let’s build something great together.</small></span>
+            </a>
           </div>
-          <a className="skills-opportunity" href="#about" aria-label="Contact Sanjay about opportunities">
-            <span className="skills-opportunity-icon">↗</span>
-            <span><strong>OPEN TO OPPORTUNITIES</strong><small>Let’s build something great together.</small></span>
-          </a>
         </div>
 
         <div className="skills-marquee-stage" aria-label="Frontend and backend technologies">

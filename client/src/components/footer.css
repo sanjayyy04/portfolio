@@ -3,10 +3,11 @@
   isolation: isolate;
   overflow: hidden;
   padding: 0 clamp(18px, 5vw, 72px) 22px;
-  background: #05050a;
+  background: black;
   color: #f5f2ff;
   border-top: 1px solid rgba(153, 125, 255, .18);
 }
+
 .footer-light-scene {
   position: relative;
   /* Full-bleed scene: escape the footer's padded content area and span the viewport. */
@@ -16,33 +17,37 @@
   height: clamp(390px, 48vw, 560px);
   isolation: isolate;
 }
-.footer-light-scene > .laser-flow-container {
+
+.footer-light-scene>.laser-flow-container {
   position: absolute;
   inset: 0;
   z-index: 0;
   width: 100%;
   height: 100%;
 }
+
 .footer-light-surface {
   position: absolute;
   left: 7%;
   right: 8%;
-  top: 43%;
-  bottom: 18px;
+  top: 31%;
+  bottom: 0;
   z-index: 1;
   overflow: hidden;
   border: 1px solid rgba(160, 139, 255, .18);
   border-radius: 16px;
   padding: clamp(24px, 4.2vw, 56px);
   background: linear-gradient(135deg, rgba(10, 9, 19, .97), rgba(7, 7, 12, .92));
-  box-shadow: 0 -12px 55px rgba(103, 68, 255, .08), inset 0 1px rgba(255,255,255,.025);
+  box-shadow: 0 -12px 55px rgba(103, 68, 255, .08), inset 0 1px rgba(255, 255, 255, .025);
 }
+
 .footer-kicker {
   margin: 0 0 clamp(18px, 3vw, 30px);
   color: #a99aff;
   font: 500 10px/1.4 var(--font-mono);
   letter-spacing: .16em;
 }
+
 .footer-light-surface h2 {
   max-width: 700px;
   margin: 0;
@@ -50,16 +55,19 @@
   font: 500 clamp(38px, 7vw, 88px)/.98 var(--font-display);
   letter-spacing: -.065em;
 }
+
 .footer-light-surface h2 em {
   color: #a994ff;
   font-style: normal;
   text-shadow: 0 0 30px rgba(126, 88, 255, .2);
 }
+
 .footer-message {
   margin: clamp(20px, 3vw, 32px) 0 0;
   color: #a7a2b7;
   font: 400 clamp(12px, 1.3vw, 15px)/1.6 var(--font-mono);
 }
+
 .footer-bottom {
   position: relative;
   z-index: 2;
@@ -75,12 +83,14 @@
   font: 9px/1.6 var(--font-mono);
   letter-spacing: .07em;
 }
+
 .footer-links {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: clamp(12px, 2.5vw, 28px);
 }
+
 .footer-links a,
 .footer-links button,
 .footer-link-pending {
@@ -93,27 +103,68 @@
   cursor: pointer;
   transition: color .2s ease;
 }
+
 .footer-links a:hover,
 .footer-links button:hover,
 .footer-links a:focus-visible,
 .footer-links button:focus-visible {
   color: #b39fff;
 }
-.footer-link-pending { color: #625d70; cursor: default; }
+
+.footer-link-pending {
+  color: #625d70;
+  cursor: default;
+}
+
 @media (max-width: 700px) {
-  .footer-light-scene { height: 440px; }
-  .footer-light-surface { left: 2%; right: 2%; top: 42%; bottom: 12px; padding: 24px; }
-  .footer-bottom { align-items: flex-start; flex-direction: column; gap: 14px; }
-  .footer-links { justify-content: flex-start; }
+  .footer-light-scene {
+    height: 440px;
+  }
+
+  .footer-light-surface {
+    left: 2%;
+    right: 2%;
+    top: 42%;
+    bottom: 12px;
+    padding: 24px;
+  }
+
+  .footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .footer-links {
+    justify-content: flex-start;
+  }
 }
+
 @media (max-width: 420px) {
-  .footer-light-scene { height: 400px; }
-  .footer-light-surface { top: 40%; padding: 20px 16px; }
-  .footer-light-surface h2 { font-size: clamp(36px, 11vw, 48px); }
-  .footer-links { gap: 12px 18px; }
+  .footer-light-scene {
+    height: 400px;
+  }
+
+  .footer-light-surface {
+    top: 40%;
+    padding: 20px 16px;
+  }
+
+  .footer-light-surface h2 {
+    font-size: clamp(36px, 11vw, 48px);
+  }
+
+  .footer-links {
+    gap: 12px 18px;
+  }
 }
+
 @media (prefers-reduced-motion: reduce) {
-  .footer-links a, .footer-links button { transition: none; }
+
+  .footer-links a,
+  .footer-links button {
+    transition: none;
+  }
 }
 
 /* The Hero's orbital geometry now closes the experience in the footer. */
@@ -125,9 +176,21 @@
   opacity: .78;
   filter: drop-shadow(0 0 30px rgba(71, 108, 255, .18));
 }
-.footer-light-surface { z-index: 1; }
 
-.footer-light-surface > .footer-kicker,
-.footer-light-surface > h2,
-.footer-light-surface > .footer-message { position: relative; z-index: 1; }
-.footer-light-surface .footer-orbital { right: 1%; top: 50%; width: clamp(150px, 25vw, 300px); opacity: .34; }
+.footer-light-surface {
+  z-index: 1;
+}
+
+.footer-light-surface>.footer-kicker,
+.footer-light-surface>h2,
+.footer-light-surface>.footer-message {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-light-surface .footer-orbital {
+  right: 1%;
+  top: 50%;
+  width: clamp(150px, 25vw, 300px);
+  opacity: .34;
+}

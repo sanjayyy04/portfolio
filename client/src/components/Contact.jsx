@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { sitePath } from '../sitePath.js';
 import './contact.css';
 
 // Replace this placeholder with the email address you want visitors to contact.
@@ -63,7 +64,7 @@ export default function Contact() {
           <div className="contact-links" aria-label="Contact links">
             <a href={LINKEDIN_URL} target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
             <a href={GITHUB_URL} target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
-            <a href="/Sanjay-Chauhan-Resume.pdf" target="_blank" rel="noreferrer">Resume <span aria-hidden="true">↗</span></a>
+            <a href={sitePath('Sanjay-Chauhan-Resume.pdf')} target="_blank" rel="noreferrer">Resume <span aria-hidden="true">↗</span></a>
             <a href={`mailto:${CONTACT_EMAIL}`}>Email <span aria-hidden="true">↗</span></a>
             <a href="tel:+919737327918">Phone <span aria-hidden="true">↗</span></a>
           </div>

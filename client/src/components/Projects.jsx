@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { sitePath } from '../sitePath.js';
 
 const projects = [
   { slug: 'chatme', no: '01', name: 'CHATME — MERN CHAT', type: 'REAL-TIME MESSAGING', description: 'A full-stack MERN messaging experience with friend requests, one-to-one and group conversations, media sharing, live presence, typing indicators, and message status updates. Built around React/Vite, Express, MongoDB, and Socket.IO, with PWA and security-focused messaging features.', stack: ['React', 'Node.js', 'MongoDB', 'Socket.IO', 'JWT'], theme: 'project-dark', signal: 'REAL-TIME MESSAGING', summary: 'Friend requests · Direct and group chats · Media attachments · Online presence and typing · Delivery/read receipts · PWA and encrypted DM features.', liveUrl: 'https://sanjayyy04.github.io/ChatApp-MERN-complate/users', repoUrl: 'https://github.com/sanjayyy04/ChatApp-MERN-complate' },
@@ -8,7 +9,7 @@ const projects = [
 ];
 
 function ProjectArtwork({ project }) {
-  return <div className={`project-art ${project.theme}`} aria-hidden="true"><div className="art-top"><span className="art-dot" /> {project.no} / FEATURED PROJECT <span className="art-arrow">↗</span></div><h3>{project.name}</h3><p>{project.type}</p><div className="art-live"><i /> {project.signal}<small>BUILD / LEARN / DEPLOY</small></div><div className="art-bars">{Array.from({length: 19}, (_, i) => <i key={i} style={{height:`${15 + ((i * 17) % 52)}px`}} />)}</div><div className="art-tags">{project.stack.slice(0,4).map(tag => <span key={tag}>{tag}</span>)}</div></div>
+  return <div className={`project-art ${project.theme}`} aria-hidden="true"><div className="art-top"><span className="art-dot" /> {project.no} / FEATURED PROJECT <span className="art-arrow">↗</span></div><h3>{project.name}</h3><p>{project.type}</p><div className="art-live"><i /> {project.signal}<small>BUILD / LEARN / DEPLOY</small></div><div className="art-bars">{Array.from({length: 19}, (_, i) => <i key={i} />)}</div><div className="art-tags">{project.stack.slice(0,4).map(tag => <span key={tag}>{tag}</span>)}</div></div>
 }
 
 export default function Projects() {
@@ -26,7 +27,6 @@ export default function Projects() {
         card.classList.toggle('active', i === active);
         card.classList.toggle('was-active', i < active);
         card.classList.toggle('project-in-view', i === active);
-        card.style.setProperty('--panel-index', i);
       });
     };
     update();
@@ -38,10 +38,10 @@ export default function Projects() {
   return <section className="projects-section" id="projects" ref={sectionRef} aria-labelledby="projects-title">
     <div className="projects-sticky container">
       <div className="projects-header"><span className="projects-eyebrow"><i /> PROJECTS <b /></span><span className="projects-index">[ 04 ]</span></div>
-      <div className="projects-intro"><p className="projects-overline">A FEW THINGS I'VE BUILT</p><h2 id="projects-title">SELECTED<br/><span>WORK</span></h2><p>A collection of projects I’ve built to solve real problems, explore new technologies, and turn ideas into working products.</p><a className="projects-explore" href="/projects">EXPLORE PROJECTS <span>↗</span></a></div>
+      <div className="projects-intro"><p className="projects-overline">A FEW THINGS I'VE BUILT</p><h2 id="projects-title">SELECTED<br/><span>WORK</span></h2><p>A collection of projects I’ve built to solve real problems, explore new technologies, and turn ideas into working products.</p><a className="projects-explore" href={sitePath('projects')}>EXPLORE PROJECTS <span>↗</span></a></div>
       <div className="projects-stack" id="project-stack">
         {projects.map((project, i) => <article className={`project-panel panel-${i+1}`} key={project.slug} data-project-target>
-          <a className="project-panel-link" href={`/project/${project.slug}`} aria-label={`Open ${project.name} project details`}><ProjectArtwork project={project}/><span className="project-panel-open">↗</span></a>
+          <a className="project-panel-link" href={sitePath(`project/${project.slug}`)} aria-label={`Open ${project.name} project details`}><ProjectArtwork project={project}/><span className="project-panel-open">↗</span></a>
           <div className="project-panel-meta"><span>{project.no} / {project.type}</span><p>{project.summary}</p><div>{project.stack.slice(0,4).map(tag => <small key={tag}>{tag}</small>)}</div></div>
         </article>)}
       </div>
